@@ -17,9 +17,9 @@
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
-		<module>../dubbo-api</module>
-    <module>../dubbo-provider</module>
-    <module>../dubbo-consumer</module>
+		<module>dubbo-api</module>
+    <module>dubbo-provider</module>
+    <module>dubbo-consumer</module>
 	</modules>
 
   <dependencyManagement>

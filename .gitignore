@@ -20,20 +20,20 @@ dubbo-demo/mvnw
 dubbo-demo/mvnw.cmd
 dubbo-demo/target
 
-dubbo-api/.mvn
-dubbo-api/dubbo-api.iml
-dubbo-api/mvnw
-dubbo-api/mvnw.cmd
-dubbo-api/target
+dubbo-demo/dubbo-api/.mvn
+dubbo-demo/dubbo-api/dubbo-api.iml
+dubbo-demo/dubbo-api/mvnw
+dubbo-demo/dubbo-api/mvnw.cmd
+dubbo-demo/dubbo-api/target
 
-dubbo-provider/.mvn
-dubbo-provider/dubbo-provider.iml
-dubbo-provider/mvnw
-dubbo-provider/mvnw.cmd
-dubbo-provider/target
+dubbo-demo/dubbo-provider/.mvn
+dubbo-demo/dubbo-provider/dubbo-provider.iml
+dubbo-demo/dubbo-provider/mvnw
+dubbo-demo/dubbo-provider/mvnw.cmd
+dubbo-demo/dubbo-provider/target
 
-dubbo-consumer/.mvn
-dubbo-consumer/dubbo-consumer.iml
-dubbo-consumer/mvnw
-dubbo-consumer/mvnw.cmd
-dubbo-consumer/target
+dubbo-demo/dubbo-consumer/.mvn
+dubbo-demo/dubbo-consumer/dubbo-consumer.iml
+dubbo-demo/dubbo-consumer/mvnw
+dubbo-demo/dubbo-consumer/mvnw.cmd
+dubbo-demo/dubbo-consumer/target
