@@ -1,4 +1,4 @@
-package com.goku.druiddemo;
+package com.goku.druid.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,7 @@
-package com.goku.druiddemo.rest;
+package com.goku.druid.demo.rest;
 
-import com.goku.druiddemo.entity.Region;
-import com.goku.druiddemo.repository.RegionMapper;
+import com.goku.druid.demo.entity.Region;
+import com.goku.druid.demo.repository.RegionMapper;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

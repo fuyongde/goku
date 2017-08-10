@@ -37,3 +37,9 @@ dubbo-demo/dubbo-consumer/dubbo-consumer.iml
 dubbo-demo/dubbo-consumer/mvnw
 dubbo-demo/dubbo-consumer/mvnw.cmd
 dubbo-demo/dubbo-consumer/target
+
+fastjson-demo/.mvn
+fastjson-demo/fastjson-demo.iml
+fastjson-demo/mvnw
+fastjson-demo/mvnw.cmd
+fastjson-demo/target

@@ -1,6 +1,6 @@
-package com.goku.druiddemo.repository;
+package com.goku.druid.demo.repository;
 
-import com.goku.druiddemo.entity.Region;
+import com.goku.druid.demo.entity.Region;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

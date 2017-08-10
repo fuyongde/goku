@@ -1,4 +1,4 @@
-package com.goku.druiddemo.entity;
+package com.goku.druid.demo.entity;
 
 import java.io.Serializable;
 
