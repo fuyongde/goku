@@ -8,6 +8,9 @@ import org.springframework.context.annotation.ImportResource;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * @author fuyongde
+ */
 @SpringBootApplication
 @ImportResource({"classpath:dubbo-provider.xml"})
 public class DubboProviderApplication {

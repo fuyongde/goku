@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+/**
+ * @author fuyongde
+ */
 @RestController
 @RequestMapping(value = "/api/regions")
 public class RegionRestController {

@@ -16,7 +16,7 @@ import java.util.Arrays;
 
 /**
  * 日志拦截
- * Created by fuyongde on 2017/4/12.
+ * @author fuyongde
  */
 @Aspect
 @Component
@@ -53,5 +53,6 @@ public class WebLogAspect {
     logger.info("RESPONSE : {}", result);
     logger.info("SPEND TIME : {}ms", (System.currentTimeMillis() - startTime.get()));
     logger.info("=============================end======================================");
+    startTime.remove();
   }
 }

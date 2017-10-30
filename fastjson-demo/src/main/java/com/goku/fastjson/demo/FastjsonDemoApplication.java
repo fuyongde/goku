@@ -9,6 +9,9 @@ import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.HttpMessageConverter;
 
+/**
+ * @author fuyongde
+ */
 @SpringBootApplication
 public class FastjsonDemoApplication {
 

@@ -2,6 +2,9 @@ package com.goku.dubbo.provider.entity;
 
 import java.io.Serializable;
 
+/**
+ * @author fuyongde
+ */
 public class Region implements Serializable {
   private Integer id;
   private Integer parentId;
