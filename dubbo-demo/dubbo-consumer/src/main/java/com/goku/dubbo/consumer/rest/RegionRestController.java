@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api/regions")
 public class RegionRestController {
 
-    @Autowired
-    private RegionService regionService;
+  @Autowired
+  private RegionService regionService;
 
-    @GetMapping(value = "/{id}")
-    public RegionVO region(@PathVariable Integer id) {
-        RegionDTO regionDTO = regionService.region(id);
-        RegionVO regionVO = BeanMapper.map(regionDTO, RegionVO.class);
-        return regionVO;
-    }
+  @GetMapping(value = "/{id}")
+  public RegionVO region(@PathVariable Integer id) {
+    RegionDTO regionDTO = regionService.region(id);
+    RegionVO regionVO = BeanMapper.map(regionDTO, RegionVO.class);
+    return regionVO;
+  }
 }

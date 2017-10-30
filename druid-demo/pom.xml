@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.goku</groupId>
-		<artifactId>goku-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
-		<relativePath>../goku-parent/pom.xml</relativePath>
-	</parent>
+  <parent>
+    <groupId>com.goku</groupId>
+    <artifactId>goku-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../goku-parent/pom.xml</relativePath>
+  </parent>
 
-	<artifactId>druid-demo</artifactId>
-	<packaging>jar</packaging>
+  <artifactId>druid-demo</artifactId>
+  <packaging>jar</packaging>
 
-	<name>druid-demo</name>
-	<description>Demo project for Spring Boot</description>
+  <name>druid-demo</name>
+  <description>Demo project for Spring Boot</description>
 
-	<dependencyManagement>
-		<dependencies>
+  <dependencyManagement>
+    <dependencies>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
@@ -26,36 +26,36 @@
         <scope>import</scope>
       </dependency>
     </dependencies>
-	</dependencyManagement>
+  </dependencyManagement>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+  <dependencies>
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-		<dependency>
+    <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid-spring-boot-starter</artifactId>
-		</dependency>
+    </dependency>
 
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
-	<build>
+  <build>
     <finalName>druid-demo</finalName>
     <plugins>
       <plugin>
@@ -71,6 +71,6 @@
         </executions>
       </plugin>
     </plugins>
-	</build>
+  </build>
 
 </project>

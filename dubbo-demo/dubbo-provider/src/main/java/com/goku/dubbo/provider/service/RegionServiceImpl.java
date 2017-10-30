@@ -16,13 +16,13 @@ import javax.annotation.Resource;
 @com.alibaba.dubbo.config.annotation.Service
 public class RegionServiceImpl implements RegionService {
 
-    @Resource
-    private RegionMapper regionMapper;
+  @Resource
+  private RegionMapper regionMapper;
 
-    @Override
-    public RegionDTO region(Integer id) {
-        Region region = regionMapper.findById(id);
-        RegionDTO regionDTO = BeanMapper.map(region, RegionDTO.class);
-        return regionDTO;
-    }
+  @Override
+  public RegionDTO region(Integer id) {
+    Region region = regionMapper.findById(id);
+    RegionDTO regionDTO = BeanMapper.map(region, RegionDTO.class);
+    return regionDTO;
+  }
 }

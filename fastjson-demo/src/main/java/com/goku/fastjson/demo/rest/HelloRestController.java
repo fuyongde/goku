@@ -12,35 +12,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api/hello")
 public class HelloRestController {
 
-    @GetMapping
-    Hello hello() {
-        return new Hello(1, "Hello");
-    }
+  @GetMapping
+  Hello hello() {
+    return new Hello(1, "Hello");
+  }
 }
 
 class Hello {
-    @JSONField(serialize = false)
-    Integer id;
-    String name;
+  @JSONField(serialize = false)
+  Integer id;
+  String name;
 
-    public Integer getId() {
-        return id;
-    }
+  public Hello(Integer id, String name) {
+    this.id = id;
+    this.name = name;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public Hello(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 }

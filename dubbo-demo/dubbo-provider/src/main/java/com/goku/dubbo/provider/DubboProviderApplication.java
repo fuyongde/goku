@@ -15,18 +15,18 @@ import java.util.concurrent.CountDownLatch;
 @ImportResource({"classpath:dubbo-provider.xml"})
 public class DubboProviderApplication {
 
-	public static void main(String[] args) throws InterruptedException {
-		ApplicationContext ctx = new SpringApplicationBuilder()
-				.sources(DubboProviderApplication.class)
-				.web(false)
-				.run(args);
+  public static void main(String[] args) throws InterruptedException {
+    ApplicationContext ctx = new SpringApplicationBuilder()
+        .sources(DubboProviderApplication.class)
+        .web(false)
+        .run(args);
 
-		CountDownLatch closeLatch = ctx.getBean(CountDownLatch.class);
-		closeLatch.await();
-	}
+    CountDownLatch closeLatch = ctx.getBean(CountDownLatch.class);
+    closeLatch.await();
+  }
 
-	@Bean
-	public CountDownLatch countDownLatch() {
-		return new CountDownLatch(1);
-	}
+  @Bean
+  public CountDownLatch countDownLatch() {
+    return new CountDownLatch(1);
+  }
 }

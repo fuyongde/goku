@@ -15,18 +15,18 @@ import org.springframework.http.converter.HttpMessageConverter;
 @SpringBootApplication
 public class FastjsonDemoApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(FastjsonDemoApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(FastjsonDemoApplication.class, args);
+  }
 
-    @Bean
-    public HttpMessageConverters fastJsonHttpMessageConverters() {
-        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
-        FastJsonConfig fastJsonConfig = new FastJsonConfig();
-        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
-        fastConverter.setFastJsonConfig(fastJsonConfig);
-        HttpMessageConverter<?> converter = fastConverter;
-        return new HttpMessageConverters(converter);
-    }
+  @Bean
+  public HttpMessageConverters fastJsonHttpMessageConverters() {
+    FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+    FastJsonConfig fastJsonConfig = new FastJsonConfig();
+    fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+    fastConverter.setFastJsonConfig(fastJsonConfig);
+    HttpMessageConverter<?> converter = fastConverter;
+    return new HttpMessageConverters(converter);
+  }
 
 }

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource({"classpath:dubbo-consumer.xml"})
 public class DubboConsumerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DubboConsumerApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(DubboConsumerApplication.class, args);
+  }
 }
