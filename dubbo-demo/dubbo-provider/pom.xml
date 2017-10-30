@@ -32,6 +32,10 @@
       <groupId>com.goku</groupId>
       <artifactId>dubbo-api</artifactId>
     </dependency>
+		<dependency>
+			<groupId>com.goku</groupId>
+			<artifactId>dubbo-commons</artifactId>
+		</dependency>
 
     <dependency>
       <groupId>com.alibaba</groupId>

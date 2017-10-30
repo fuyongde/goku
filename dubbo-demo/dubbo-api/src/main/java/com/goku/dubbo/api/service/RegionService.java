@@ -1,5 +1,7 @@
 package com.goku.dubbo.api.service;
 
+import com.goku.dubbo.api.service.dto.RegionDTO;
+
 /**
  * @author fuyongde
  */
@@ -11,5 +13,5 @@ public interface RegionService {
      *
      * @return
      */
-    Object region(Integer id);
+    RegionDTO region(Integer id);
 }

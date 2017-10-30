@@ -1,6 +1,9 @@
 package com.goku.dubbo.provider.service;
 
 import com.goku.dubbo.api.service.RegionService;
+import com.goku.dubbo.api.service.dto.RegionDTO;
+import com.goku.dubbo.commons.utils.BeanMapper;
+import com.goku.dubbo.provider.entity.Region;
 import com.goku.dubbo.provider.repository.RegionMapper;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +20,9 @@ public class RegionServiceImpl implements RegionService {
     private RegionMapper regionMapper;
 
     @Override
-    public Object region(Integer id) {
-        return regionMapper.findById(id);
+    public RegionDTO region(Integer id) {
+        Region region = regionMapper.findById(id);
+        RegionDTO regionDTO = BeanMapper.map(region, RegionDTO.class);
+        return regionDTO;
     }
 }
