@@ -16,19 +16,21 @@
 
   <select id="findById" resultMap="RegionMap">
     SELECT
-    <include refid="Base_Column_List"/>
-    FROM `region` r WHERE r.`id` = #{id}
+      <include refid="Base_Column_List"/>
+    FROM `region` r
+    WHERE r.`id` = #{id}
   </select>
 
   <select id="findByParentId" resultMap="RegionMap">
     SELECT
-    <include refid="Base_Column_List"/>
-    FROM `region` r WHERE r.`parent_id` = #{parentId}
+      <include refid="Base_Column_List"/>
+    FROM `region` r
+    WHERE r.`parent_id` = #{parentId}
   </select>
 
   <select id="findAll" resultMap="RegionMap">
     SELECT
-    <include refid="Base_Column_List"/>
+      <include refid="Base_Column_List"/>
     FROM `region` r
   </select>
 
