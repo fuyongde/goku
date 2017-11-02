@@ -7,9 +7,11 @@ package com.goku.dubbo.commons.pinyin;
  */
 public interface PinyinRegexConsts {
 
-    /** 空川 **/
+    /** 空串 **/
     String NON = "";
 
+    /** 汉字 **/
+    String REGEX_CHINESE = "[\\u4E00-\\u9FA5]+";
     /** 标点符号 **/
     String REGEX_PUNCT = "[\\pP]";
     /** 控制字符 **/
@@ -17,6 +19,6 @@ public interface PinyinRegexConsts {
     /** 空白字符 **/
     String REGEX_SPACE = "[\\pS]";
     /** 罗马数字 **/
-    String REGEX_ROMAN_NUMERALS = "[\\u2160~\\u217F]";
+    String REGEX_ROMAN_NUMERALS = "[\\u2160-\\u217F]";
 
 }
