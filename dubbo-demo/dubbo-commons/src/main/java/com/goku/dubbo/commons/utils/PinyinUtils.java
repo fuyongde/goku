@@ -9,6 +9,8 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.Validate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -21,6 +23,8 @@ import static com.goku.dubbo.commons.pinyin.PinyinRegexConsts.*;
  */
 public class PinyinUtils {
 
+    private static Logger logger = LoggerFactory.getLogger(PinyinUtils.class);
+
     /**
      * 获取汉字的首字母
      *
@@ -30,30 +34,30 @@ public class PinyinUtils {
      */
     public static String getAlpha(String chinese) {
 
-        List<String> regexList = Lists.newArrayList(
+        List<String> excludeRegexList = Lists.newArrayList(
                 REGEX_CNTRL,
                 REGEX_PUNCT,
                 REGEX_SPACE,
                 REGEX_ROMAN_NUMERALS
         );
 
-        return getAlpha(chinese, regexList);
+        return getAlpha(chinese, excludeRegexList);
     }
 
     /**
      * 获取汉字的首字母
      *
-     * @param chinese   汉字
-     * @param regexList 需要剔除掉的字符的正则
+     * @param chinese          汉字
+     * @param excludeRegexList 需要剔除掉的字符的正则
      *
      * @return
      */
-    public static String getAlpha(String chinese, List<String> regexList) {
+    public static String getAlpha(String chinese, List<String> excludeRegexList) {
 
         Validate.notBlank(chinese);
 
-        if (!CollectionUtils.isEmpty(regexList)) {
-            for (String regex : regexList) {
+        if (!CollectionUtils.isEmpty(excludeRegexList)) {
+            for (String regex : excludeRegexList) {
                 chinese = chinese.replaceAll(regex, NON);
             }
         }
@@ -68,21 +72,36 @@ public class PinyinUtils {
         return sb.toString().toUpperCase();
     }
 
+    /**
+     * 将汉语转为拼音字母，英文不变
+     *
+     * @param input 待处理的字符
+     *
+     * @return
+     */
     public static String getAllLetter(String input) {
-        List<String> regexList = Lists.newArrayList(
+        List<String> excludeRegexList = Lists.newArrayList(
                 REGEX_CNTRL,
                 REGEX_PUNCT,
                 REGEX_SPACE,
                 REGEX_ROMAN_NUMERALS
         );
 
-        return getAllLetter(input, regexList);
+        return getAllLetter(input, excludeRegexList);
     }
 
-    public static String getAllLetter(String input, List<String> regexList) {
+    /**
+     * 将汉语转为拼音字母，英文不变
+     *
+     * @param input            待处理的字符
+     * @param excludeRegexList 要过滤掉的特殊字符的正则
+     *
+     * @return
+     */
+    public static String getAllLetter(String input, List<String> excludeRegexList) {
         Validate.notBlank(input);
-        if (!CollectionUtils.isEmpty(regexList)) {
-            for (String regex : regexList) {
+        if (!CollectionUtils.isEmpty(excludeRegexList)) {
+            for (String regex : excludeRegexList) {
                 input = input.replaceAll(regex, NON);
             }
         }
@@ -98,6 +117,7 @@ public class PinyinUtils {
                 try {
                     sb.append(PinyinHelper.toHanyuPinyinStringArray(tmp, format)[0]);
                 } catch (BadHanyuPinyinOutputFormatCombination badHanyuPinyinOutputFormatCombination) {
+                    logger.error("getAllLetter error, input is : {}, bad char is : {}", input, tmp);
                     continue;
                 }
             } else {

@@ -1,10 +1,13 @@
 package com.goku.dubbo.commons.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
+import org.apache.commons.beanutils.BeanMap;
 import org.dozer.DozerBeanMapper;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 简单封装Dozer, 实现深度转换Bean<->Bean的Mapper.实现:
@@ -18,10 +21,11 @@ import java.util.List;
  */
 public class BeanMapper {
 
-  /**
-   * 持有Dozer单例, 避免重复创建DozerMapper消耗资源.
-   */
+  /** 持有Dozer单例, 避免重复创建DozerMapper消耗资源. **/
   private static DozerBeanMapper dozer = new DozerBeanMapper();
+
+  /** 持有ObjectMapper，避免重复创建ObjectMapper消耗资源 **/
+  private static ObjectMapper objectMapper = new ObjectMapper();
 
   /**
    * 基于Dozer转换对象的类型.
@@ -47,5 +51,25 @@ public class BeanMapper {
    */
   public static void copy(Object source, Object destinationObject) {
     dozer.map(source, destinationObject);
+  }
+
+  /**
+   * 对象转Map
+   * @param object
+   *
+   * @return
+   */
+  public static Map<String, Object> conver2Map(Object object) {
+    return objectMapper.convertValue(object, Map.class);
+  }
+
+  /**
+   * 对象转Map
+   * @param object
+   *
+   * @return
+   */
+  public static Map<String, String> conver2MapString(Object object) {
+    return objectMapper.convertValue(object, Map.class);
   }
 }

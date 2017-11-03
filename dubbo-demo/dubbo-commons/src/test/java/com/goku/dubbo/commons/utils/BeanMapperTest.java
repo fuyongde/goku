@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -60,6 +61,20 @@ public class BeanMapperTest {
         PersonVO personVO = new PersonVO();
         BeanMapper.copy(personDTO, personVO);
         assertEquals(personDTO.getName(), personVO.getName());
+    }
+
+    @Test
+    public void testConver2Map() throws Exception {
+        Map<String, Object> map = BeanMapper.conver2Map(personDTO);
+        assertEquals(personDTO.getName(), map.get("name"));
+        assertEquals(personDTO.getAge(), map.get("age"));
+    }
+
+    @Test
+    public void testConver2MapString() throws Exception {
+        Map<String, String> map = BeanMapper.conver2MapString(personDTO);
+        assertEquals(personDTO.getName(), map.get("name"));
+        assertEquals(personDTO.getAge(), map.get("age"));
     }
 
     public static class PersonDTO {
