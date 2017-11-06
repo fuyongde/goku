@@ -2,7 +2,6 @@ package com.goku.dubbo.commons.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
-import org.apache.commons.beanutils.BeanMap;
 import org.dozer.DozerBeanMapper;
 
 import java.util.Collection;

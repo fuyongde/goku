@@ -69,5 +69,4 @@ public class OKHttpTest {
         String result = new String(response.body().bytes(), "GB2312");
         System.out.println(result);
     }
-
-} 
+}
