@@ -17,7 +17,6 @@ import static org.junit.Assert.assertEquals;
  * @date 2017/11/6 18:59
  */
 public class RetrofitTest {
-    public static final String URL_BAIDU = "http://www.baiduc.com";
 
     @Before
     public void before() throws Exception {

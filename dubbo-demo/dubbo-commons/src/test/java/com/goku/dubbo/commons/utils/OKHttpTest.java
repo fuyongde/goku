@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class OKHttpTest {
 
-    public static final String URL_BAIDU = "http://www.baiduc.com";
+    public static final String URL_BAIDU = "http://www.baidu.com";
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
@@ -48,7 +48,7 @@ public class OKHttpTest {
                 .post(jsonBody)
                 .build();
         Response response = okHttpClient.newCall(request).execute();
-        assertEquals(200, response.code());
+        assertEquals(302, response.code());
     }
 
     @Test
@@ -59,7 +59,7 @@ public class OKHttpTest {
                 .post(formBody)
                 .build();
         Response response = okHttpClient.newCall(request).execute();
-        assertEquals(200, response.code());
+        assertEquals(302, response.code());
     }
 
     @Test
