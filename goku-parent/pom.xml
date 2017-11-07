@@ -46,6 +46,8 @@
 
     <unirest-java.version>1.4.9</unirest-java.version>
 
+    <urlbuilder.version>2.0.9</urlbuilder.version>
+
     <mybatis-spring-boot-starter.version>1.3.0</mybatis-spring-boot-starter.version>
     <java.version>1.8</java.version>
   </properties>
@@ -135,6 +137,7 @@
         <version>${jackson.version}</version>
       </dependency>
 
+      <!--unirest-->
       <dependency>
         <groupId>com.mashape.unirest</groupId>
         <artifactId>unirest-java</artifactId>
@@ -158,6 +161,13 @@
         <groupId>com.squareup.retrofit2</groupId>
         <artifactId>converter-scalars</artifactId>
         <version>${retrofit.version}</version>
+      </dependency>
+
+      <!-- urlbuilder -->
+      <dependency>
+        <groupId>io.mikael</groupId>
+        <artifactId>urlbuilder</artifactId>
+        <version>${urlbuilder.version}</version>
       </dependency>
 
       <!-- junit -->
