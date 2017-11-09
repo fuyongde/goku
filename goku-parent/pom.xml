@@ -40,8 +40,6 @@
 
     <slf4j-log4j12.version>1.7.5</slf4j-log4j12.version>
 
-    <jackson.version>2.9.2</jackson.version>
-
     <retrofit.version>2.3.0</retrofit.version>
 
     <unirest-java.version>1.4.9</unirest-java.version>
@@ -128,13 +126,6 @@
         <artifactId>slf4j-log4j12</artifactId>
         <version>${slf4j-log4j12.version}</version>
         <scope>test</scope>
-      </dependency>
-
-      <!-- jackson-databind -->
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>${jackson.version}</version>
       </dependency>
 
       <!--unirest-->

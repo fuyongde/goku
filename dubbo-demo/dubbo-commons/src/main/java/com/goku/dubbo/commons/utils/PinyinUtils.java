@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-import static com.goku.dubbo.commons.pinyin.PinyinRegexConsts.*;
+import static com.goku.dubbo.commons.consts.PinyinPattern.*;
 
 /**
  * @author fuyongde

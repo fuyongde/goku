@@ -1,11 +1,11 @@
-package com.goku.dubbo.commons.pinyin;
+package com.goku.dubbo.commons.consts;
 
 /**
  * @author fuyongde
- * @desc 拼音相关的常量
+ * @desc 拼音相关的正则
  * @date 2017/11/1 19:46
  */
-public interface PinyinRegexConsts {
+public interface PinyinPattern {
 
     /** 空串 **/
     String NON = "";

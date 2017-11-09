@@ -1,5 +1,7 @@
 package com.goku.dubbo.provider.manager;
 
+import com.goku.dubbo.api.exception.ServiceException;
+import com.goku.dubbo.commons.utils.EmailChecker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,12 @@ public class EmailManager {
         Assert.notNull(to, "Receiver is Null");
         Assert.notNull(subject, "Subject is Null");
         Assert.notNull(text, "Content is Null");
+
+        boolean isEmail = EmailChecker.isEmail(to);
+        if (!isEmail) {
+            throw new ServiceException(120001);
+        }
+
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(mailProperties.getUsername());
         mailMessage.setTo(to);

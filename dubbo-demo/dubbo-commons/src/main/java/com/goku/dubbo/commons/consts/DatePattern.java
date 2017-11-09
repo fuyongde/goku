@@ -1,4 +1,4 @@
-package com.goku.dubbo.commons.date;
+package com.goku.dubbo.commons.consts;
 
 /**
  * @author fuyongde
