@@ -63,20 +63,6 @@ public class BeanMapperTest {
         assertEquals(personDTO.getName(), personVO.getName());
     }
 
-    @Test
-    public void testConver2Map() throws Exception {
-        Map<String, Object> map = BeanMapper.conver2Map(personDTO);
-        assertEquals(personDTO.getName(), map.get("name"));
-        assertEquals(personDTO.getAge(), map.get("age"));
-    }
-
-    @Test
-    public void testConver2MapString() throws Exception {
-        Map<String, String> map = BeanMapper.conver2MapString(personDTO);
-        assertEquals(personDTO.getName(), map.get("name"));
-        assertEquals(personDTO.getAge(), map.get("age"));
-    }
-
     public static class PersonDTO {
         String name;
         int age;

@@ -6,9 +6,7 @@ import java.math.BigDecimal;
 /**
  * 数字转换为汉语中人民币的大写<br>
  *
- * @author hongten
- * @contact hongtenzone@foxmail.com
- * @create 2013-08-13
+ * @author fuyongde
  */
 public class Money2CnUtils {
     /**

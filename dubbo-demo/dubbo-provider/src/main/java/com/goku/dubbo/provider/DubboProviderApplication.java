@@ -5,6 +5,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -12,6 +13,7 @@ import java.util.concurrent.CountDownLatch;
  * @author fuyongde
  */
 @SpringBootApplication
+@EnableScheduling
 @ImportResource({"classpath:dubbo-provider.xml"})
 public class DubboProviderApplication {
 
