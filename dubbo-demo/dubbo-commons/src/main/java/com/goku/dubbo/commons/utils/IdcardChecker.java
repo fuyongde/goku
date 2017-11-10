@@ -1,7 +1,6 @@
 package com.goku.dubbo.commons.utils;
 
 import com.goku.dubbo.commons.consts.DatePattern;
-import com.goku.dubbo.commons.consts.IdcardPattern;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 

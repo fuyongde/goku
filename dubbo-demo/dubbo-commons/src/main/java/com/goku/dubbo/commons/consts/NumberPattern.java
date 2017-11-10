@@ -2,7 +2,7 @@ package com.goku.dubbo.commons.consts;
 
 /**
  * @author fuyongde
- * @desc //TODO
+ * @desc 数字的正则表达式
  * @date 2017/11/10 15:37
  */
 public interface NumberPattern {

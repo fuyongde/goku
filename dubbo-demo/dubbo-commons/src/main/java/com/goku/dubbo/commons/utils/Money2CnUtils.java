@@ -1,6 +1,5 @@
 package com.goku.dubbo.commons.utils;
 
-
 import java.math.BigDecimal;
 
 /**
