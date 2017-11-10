@@ -1,7 +1,8 @@
 package com.goku.dubbo.commons.utils;
 
-import com.goku.dubbo.commons.consts.EmailPattern;
 import org.apache.commons.lang3.StringUtils;
+
+import static com.goku.dubbo.commons.consts.EmailPattern.EMAIL_PATTERN;
 
 /**
  * @author fuyongde
@@ -14,6 +15,6 @@ public class EmailChecker {
         if (StringUtils.isBlank(email)) {
             return false;
         }
-        return email.matches(EmailPattern.EMAIL_PATTERN);
+        return email.matches(EMAIL_PATTERN);
     }
 }

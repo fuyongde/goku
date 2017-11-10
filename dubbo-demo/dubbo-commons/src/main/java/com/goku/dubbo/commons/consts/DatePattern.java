@@ -13,6 +13,9 @@ public interface DatePattern {
 
     String PATTERN_3 = "yyyyMMddHHmmss";
 
-    String PATTERN_4 = "yy/MM/dd";
+    String PATTERN_4 = "yyyyMMdd";
 
+    String PATTERN_5 = "yyMMdd";
+
+    String PATTERN_6 = "yy/MM/dd";
 }
