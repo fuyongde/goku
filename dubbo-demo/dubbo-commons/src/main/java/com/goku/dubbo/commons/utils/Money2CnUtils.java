@@ -33,25 +33,28 @@ public class Money2CnUtils {
      */
     private static final String CN_ZEOR_FULL = "零元" + CN_FULL;
 
+    /**
+     * 十进制
+     */
     private static final int INTO = 10;
 
     /**
      * 把输入的金额转换为汉语中人民币的大写
      *
-     * @param numberOfMoney 输入的金额
+     * @param money 输入的金额
      *
      * @return 对应的汉语大写
      */
-    public static String number2CNMontrayUnit(BigDecimal numberOfMoney) {
+    public static String toCN(BigDecimal money) {
         StringBuffer sb = new StringBuffer();
         // -1, 0, or 1 as the value of this BigDecimal is negative, zero, or positive.
-        int signum = numberOfMoney.signum();
+        int signum = money.signum();
         // 零元整的情况
         if (signum == 0) {
             return CN_ZEOR_FULL;
         }
         //这里会进行金额的四舍五入
-        long number = numberOfMoney.movePointRight(MONEY_PRECISION).setScale(0, 4).abs().longValue();
+        long number = money.movePointRight(MONEY_PRECISION).setScale(0, 4).abs().longValue();
         // 得到小数点后两位值
         long scale = number % 100;
         int numUnit = 0;

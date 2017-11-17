@@ -24,7 +24,6 @@ public class PaginationUtilsTest {
         for (int i = 0; i < 109; i++) {
             list.add(i);
         }
-        list = null;
     }
 
     @After
@@ -37,8 +36,8 @@ public class PaginationUtilsTest {
      */
     @Test
     public void testGetByPage() throws Exception {
-        int pageIndex = 0;
-        int pageSize = 10;
+        int pageIndex = -1;
+        int pageSize = 0;
         List<Integer> currentPage = PaginationUtils.getByPage(list, pageIndex, pageSize);
         currentPage.forEach(System.out::println);
     }
