@@ -12,7 +12,7 @@ import java.time.Clock;
  * @desc 参数的过滤器
  * @date 2017/11/9 15:23
  */
-@WebFilter(filterName = "paramFilter", urlPatterns = "/*")
+@WebFilter(filterName = "dateFilter", urlPatterns = "/*")
 public class DateFilter implements Filter {
 
     @Override
