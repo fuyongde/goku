@@ -18,38 +18,38 @@ import static org.junit.Assert.assertEquals;
  */
 public class UnirestTest {
 
-    public static final String URL_BAIDU = "http://www.baidu.com";
+  public static final String URL_BAIDU = "http://www.baidu.com";
 
-    @Before
-    public void before() throws Exception {
+  @Before
+  public void before() throws Exception {
 
-    }
+  }
 
-    @After
-    public void after() throws Exception {
+  @After
+  public void after() throws Exception {
 
-    }
+  }
 
-    @Test
-    public void testGet() throws Exception {
-        HttpResponse response = Unirest.get(URL_BAIDU).asBinary();
-        assertEquals(200, response.getStatus());
-    }
+  @Test
+  public void testGet() throws Exception {
+    HttpResponse response = Unirest.get(URL_BAIDU).asBinary();
+    assertEquals(200, response.getStatus());
+  }
 
-    @Test
-    public void testPost() throws Exception {
-        HttpResponse response = Unirest.post(URL_BAIDU)
-                .field("name", "fuyongde")
-                .asBinary();
-        assertEquals(302, response.getStatus());
-    }
+  @Test
+  public void testPost() throws Exception {
+    HttpResponse response = Unirest.post(URL_BAIDU)
+        .field("name", "fuyongde")
+        .asBinary();
+    assertEquals(302, response.getStatus());
+  }
 
-    @Test
-    public void testBug() throws Exception {
-        HttpResponse response = Unirest
-                .get("http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/11.html")
-                .asBinary();
-        String result = IOUtils.toString(response.getRawBody(), "GB2312");
-        System.out.println(result);
-    }
+  @Test
+  public void testBug() throws Exception {
+    HttpResponse response = Unirest
+        .get("http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/11.html")
+        .asBinary();
+    String result = IOUtils.toString(response.getRawBody(), "GB2312");
+    System.out.println(result);
+  }
 } 

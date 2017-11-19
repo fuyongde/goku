@@ -7,5 +7,5 @@ package com.goku.dubbo.commons.consts;
  */
 public interface NumberPattern {
 
-    String ALL_DIGITAL_PATTERN = "^[0-9]*$";
+  String ALL_DIGITAL_PATTERN = "^[0-9]*$";
 }

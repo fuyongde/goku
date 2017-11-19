@@ -7,21 +7,21 @@ package com.goku.dubbo.commons.consts;
  */
 public interface PageConsts {
 
-    /**
-     * 最小页码
-     */
-    int PAGE_INDEX_MIN = 0;
-    /**
-     * 默认起始页
-     */
-    int PAGE_INDEX_DEFAULT = 0;
+  /**
+   * 最小页码
+   */
+  int PAGE_INDEX_MIN = 0;
+  /**
+   * 默认起始页
+   */
+  int PAGE_INDEX_DEFAULT = 0;
 
-    /**
-     * 最小页面大小
-     */
-    int PAGE_SIZE_MIN = 1;
-    /**
-     * 默认页面大小
-     */
-    int PAGE_SIZE_DEFAULT = 10;
+  /**
+   * 最小页面大小
+   */
+  int PAGE_SIZE_MIN = 1;
+  /**
+   * 默认页面大小
+   */
+  int PAGE_SIZE_DEFAULT = 10;
 }

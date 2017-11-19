@@ -12,33 +12,33 @@ import static com.goku.dubbo.commons.consts.PhonePattern.TELEPHONE_PATTERN;
  */
 public class PhoneChecker {
 
-    /**
-     * 验证手机号码
-     *
-     * 移动号码段:139、138、137、136、135、134、150、151、152、157、158、159、182、183、187、188、147
-     * 联通号码段:130、131、132、136、185、186、145
-     * 电信号码段:133、153、180、189
-     *
-     * @param mobile
-     * @return
-     */
-    public static boolean isMobile(String mobile) {
-        if (StringUtils.isBlank(mobile)) {
-            return false;
-        }
-        return mobile.matches(MOBILE_PATTERN);
+  /**
+   * 验证手机号码
+   * <p>
+   * 移动号码段:139、138、137、136、135、134、150、151、152、157、158、159、182、183、187、188、147
+   * 联通号码段:130、131、132、136、185、186、145
+   * 电信号码段:133、153、180、189
+   *
+   * @param mobile
+   * @return
+   */
+  public static boolean isMobile(String mobile) {
+    if (StringUtils.isBlank(mobile)) {
+      return false;
     }
+    return mobile.matches(MOBILE_PATTERN);
+  }
 
-    /**
-     * 验证固话号码
-     *
-     * @param telephone
-     * @return
-     */
-    public static boolean isTelephone(String telephone) {
-        if (StringUtils.isBlank(telephone)) {
-            return false;
-        }
-        return telephone.matches(TELEPHONE_PATTERN);
+  /**
+   * 验证固话号码
+   *
+   * @param telephone
+   * @return
+   */
+  public static boolean isTelephone(String telephone) {
+    if (StringUtils.isBlank(telephone)) {
+      return false;
     }
+    return telephone.matches(TELEPHONE_PATTERN);
+  }
 }

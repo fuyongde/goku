@@ -16,31 +16,31 @@ import java.util.List;
  */
 public class PaginationUtilsTest {
 
-    private List<Integer> list;
+  private List<Integer> list;
 
-    @Before
-    public void before() throws Exception {
-        list = Lists.newArrayList();
-        for (int i = 0; i < 109; i++) {
-            list.add(i);
-        }
+  @Before
+  public void before() throws Exception {
+    list = Lists.newArrayList();
+    for (int i = 0; i < 109; i++) {
+      list.add(i);
     }
+  }
 
-    @After
-    public void after() throws Exception {
-        list = null;
-    }
+  @After
+  public void after() throws Exception {
+    list = null;
+  }
 
-    /**
-     * Method: getByPage(List<T> list, int pageIndex, int pageSize)
-     */
-    @Test
-    public void testGetByPage() throws Exception {
-        int pageIndex = -1;
-        int pageSize = 0;
-        List<Integer> currentPage = PaginationUtils.getByPage(list, pageIndex, pageSize);
-        currentPage.forEach(System.out::println);
-    }
+  /**
+   * Method: getByPage(List<T> list, int pageIndex, int pageSize)
+   */
+  @Test
+  public void testGetByPage() throws Exception {
+    int pageIndex = -1;
+    int pageSize = 0;
+    List<Integer> currentPage = PaginationUtils.getByPage(list, pageIndex, pageSize);
+    currentPage.forEach(System.out::println);
+  }
 
 
 } 

@@ -16,29 +16,29 @@ import java.math.BigDecimal;
  */
 public class Money2CnUtilsTest {
 
-    private BigDecimal moneyA;
-    private BigDecimal moneyB;
+  private BigDecimal moneyA;
+  private BigDecimal moneyB;
 
-    @Before
-    public void before() throws Exception {
-        moneyA = new BigDecimal(10000);
-        moneyB = new BigDecimal(1000);
-    }
+  @Before
+  public void before() throws Exception {
+    moneyA = new BigDecimal(10000);
+    moneyB = new BigDecimal(1000);
+  }
 
-    @After
-    public void after() throws Exception {
-    }
+  @After
+  public void after() throws Exception {
+  }
 
-    /**
-     * Method: toCN(BigDecimal money)
-     */
-    @Test
-    public void testToCN() throws Exception {
-        String moneyACN = Money2CnUtils.toCN(moneyA);
-        String moneyBCN = Money2CnUtils.toCN(moneyB);
-        Assert.assertEquals("壹万元整", moneyACN);
-        Assert.assertEquals("壹仟元整", moneyBCN);
-    }
+  /**
+   * Method: toCN(BigDecimal money)
+   */
+  @Test
+  public void testToCN() throws Exception {
+    String moneyACN = Money2CnUtils.toCN(moneyA);
+    String moneyBCN = Money2CnUtils.toCN(moneyB);
+    Assert.assertEquals("壹万元整", moneyACN);
+    Assert.assertEquals("壹仟元整", moneyBCN);
+  }
 
 
 } 

@@ -18,43 +18,43 @@ import static org.junit.Assert.assertEquals;
  */
 public class RetrofitTest {
 
-    @Before
-    public void before() throws Exception {
-    }
+  @Before
+  public void before() throws Exception {
+  }
 
-    @After
-    public void after() throws Exception {
+  @After
+  public void after() throws Exception {
 
-    }
+  }
 
-    @Test
-    public void testGet() throws Exception {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BaiduService.URL_BAIDU)
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .build();
-        BaiduService baiduService = retrofit.create(BaiduService.class);
-        Response response = baiduService.baidu().execute();
-        assertEquals(200, response.code());
-    }
+  @Test
+  public void testGet() throws Exception {
+    Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl(BaiduService.URL_BAIDU)
+        .addConverterFactory(ScalarsConverterFactory.create())
+        .build();
+    BaiduService baiduService = retrofit.create(BaiduService.class);
+    Response response = baiduService.baidu().execute();
+    assertEquals(200, response.code());
+  }
 
-    @Test
-    public void testPostJson() throws Exception {
-    }
+  @Test
+  public void testPostJson() throws Exception {
+  }
 
-    @Test
-    public void testPostForm() throws Exception {
-    }
+  @Test
+  public void testPostForm() throws Exception {
+  }
 
-    @Test
-    public void testBug() throws Exception {
-    }
+  @Test
+  public void testBug() throws Exception {
+  }
 
-    public interface BaiduService {
+  public interface BaiduService {
 
-        String URL_BAIDU = "http://www.baidu.com/";
+    String URL_BAIDU = "http://www.baidu.com/";
 
-        @GET("/")
-        Call<String> baidu();
-    }
+    @GET("/")
+    Call<String> baidu();
+  }
 }

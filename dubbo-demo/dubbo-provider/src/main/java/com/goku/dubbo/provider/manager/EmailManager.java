@@ -21,36 +21,36 @@ import org.springframework.util.Assert;
 @Component
 public class EmailManager {
 
-    private static Logger logger = LoggerFactory.getLogger(EmailManager.class);
+  private static Logger logger = LoggerFactory.getLogger(EmailManager.class);
 
-    @Autowired
-    private MailSender javaMailSender;
+  @Autowired
+  private MailSender javaMailSender;
 
-    @Autowired
-    private MailProperties mailProperties;
+  @Autowired
+  private MailProperties mailProperties;
 
-    @Async
-    public void sendMail(String to, String subject, String text) {
-        Assert.notNull(to, "Receiver is Null");
-        Assert.notNull(subject, "Subject is Null");
-        Assert.notNull(text, "Content is Null");
+  @Async
+  public void sendMail(String to, String subject, String text) {
+    Assert.notNull(to, "Receiver is Null");
+    Assert.notNull(subject, "Subject is Null");
+    Assert.notNull(text, "Content is Null");
 
-        boolean isEmail = EmailChecker.isEmail(to);
-        if (!isEmail) {
-            throw new ServiceException(120001);
-        }
-
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom(mailProperties.getUsername());
-        mailMessage.setTo(to);
-        mailMessage.setSubject(subject);
-        mailMessage.setText(text);
-        try {
-            javaMailSender.send(mailMessage);
-        } catch (MailException e) {
-            if(logger.isInfoEnabled()) {
-                logger.error("发送邮件失败。接收方：{}，主题：{}，内容：{}", to, subject, text);
-            }
-        }
+    boolean isEmail = EmailChecker.isEmail(to);
+    if (!isEmail) {
+      throw new ServiceException(120001);
     }
+
+    SimpleMailMessage mailMessage = new SimpleMailMessage();
+    mailMessage.setFrom(mailProperties.getUsername());
+    mailMessage.setTo(to);
+    mailMessage.setSubject(subject);
+    mailMessage.setText(text);
+    try {
+      javaMailSender.send(mailMessage);
+    } catch (MailException e) {
+      if (logger.isInfoEnabled()) {
+        logger.error("发送邮件失败。接收方：{}，主题：{}，内容：{}", to, subject, text);
+      }
+    }
+  }
 }

@@ -19,27 +19,27 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class EmailManagerTest {
 
-    @Autowired
-    private EmailManager emailManager;
+  @Autowired
+  private EmailManager emailManager;
 
-    @Before
-    public void before() throws Exception {
-    }
+  @Before
+  public void before() throws Exception {
+  }
 
-    @After
-    public void after() throws Exception {
-    }
+  @After
+  public void after() throws Exception {
+  }
 
-    /**
-     * Method: sendMail(String from, String to, String subject, String text)
-     */
-    @Test
-    public void testSendMail() throws Exception {
-        String to = "fuyongde@dafy.com";
-        String subject = "Goku变身";
-        String text = "自在极意功";
-        emailManager.sendMail(to, subject, text);
-    }
+  /**
+   * Method: sendMail(String from, String to, String subject, String text)
+   */
+  @Test
+  public void testSendMail() throws Exception {
+    String to = "fuyongde@dafy.com";
+    String subject = "Goku变身";
+    String text = "自在极意功";
+    emailManager.sendMail(to, subject, text);
+  }
 
 
 } 

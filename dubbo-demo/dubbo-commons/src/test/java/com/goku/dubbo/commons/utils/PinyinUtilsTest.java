@@ -15,33 +15,33 @@ import static org.junit.Assert.assertEquals;
  */
 public class PinyinUtilsTest {
 
-    @Before
-    public void before() throws Exception {
-    }
+  @Before
+  public void before() throws Exception {
+  }
 
-    @After
-    public void after() throws Exception {
-    }
+  @After
+  public void after() throws Exception {
+  }
 
-    /**
-     * Method: getAlpha(String chinese)
-     */
-    @Test
-    public void testGetAlphaChinese() throws Exception {
-        String s = "傅永德,lasfiL(）Ⅰ";
-        String alpha = PinyinUtils.getAlpha(s);
-        assertEquals("FYD", alpha);
-    }
+  /**
+   * Method: getAlpha(String chinese)
+   */
+  @Test
+  public void testGetAlphaChinese() throws Exception {
+    String s = "傅永德,lasfiL(）Ⅰ";
+    String alpha = PinyinUtils.getAlpha(s);
+    assertEquals("FYD", alpha);
+  }
 
-    /**
-     * Method: getAllLetter(String input)
-     */
-    @Test
-    public void testGetAllLetterInput() throws Exception {
-        String s = "傅永德,lasfiL(）Ⅰ";
-        String alpha = PinyinUtils.getAllLetter(s);
-        assertEquals("fuyongdelasfiL", alpha);
-    }
+  /**
+   * Method: getAllLetter(String input)
+   */
+  @Test
+  public void testGetAllLetterInput() throws Exception {
+    String s = "傅永德,lasfiL(）Ⅰ";
+    String alpha = PinyinUtils.getAllLetter(s);
+    assertEquals("fuyongdelasfiL", alpha);
+  }
 
 
 } 

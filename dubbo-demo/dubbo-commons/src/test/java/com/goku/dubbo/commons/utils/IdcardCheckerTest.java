@@ -21,53 +21,53 @@ import static org.junit.Assert.assertTrue;
  */
 public class IdcardCheckerTest {
 
-    private static Logger logger = LoggerFactory.getLogger(IdcardCheckerTest.class);
+  private static Logger logger = LoggerFactory.getLogger(IdcardCheckerTest.class);
 
-    List<String> idCardList = Lists.newArrayList();
+  List<String> idCardList = Lists.newArrayList();
 
-    List<String> notIDCardList = Lists.newArrayList();
+  List<String> notIDCardList = Lists.newArrayList();
 
-    @Before
-    public void before() throws Exception {
-        idCardList.add("410184199006013372");
-        idCardList.add("110101199901018960");
-        idCardList.add("110101199901012083");
-        idCardList.add("11010119990101832x");
-        idCardList.add("110101199901015487");
+  @Before
+  public void before() throws Exception {
+    idCardList.add("410184199006013372");
+    idCardList.add("110101199901018960");
+    idCardList.add("110101199901012083");
+    idCardList.add("11010119990101832x");
+    idCardList.add("110101199901015487");
 
-        notIDCardList.add("410184199006013371");
-        notIDCardList.add("110101199901018961");
-        notIDCardList.add("110101199901012084");
-        notIDCardList.add("110101199901018321");
-        notIDCardList.add("110101199901015488");
+    notIDCardList.add("410184199006013371");
+    notIDCardList.add("110101199901018961");
+    notIDCardList.add("110101199901012084");
+    notIDCardList.add("110101199901018321");
+    notIDCardList.add("110101199901015488");
+  }
+
+  @After
+  public void after() throws Exception {
+  }
+
+  /**
+   * Method: isSecondIDCard(String idCard)
+   */
+  @Test
+  public void testIsSecondIDCard() throws Exception {
+
+    logger.info("-----{}-----", "正确的身份证");
+
+    for (String idCard : idCardList) {
+      boolean isIDCard = IdcardChecker.isIdcard(idCard);
+      logger.info("{} is IDCard : {}", idCard, isIDCard);
+      assertTrue(isIDCard);
     }
 
-    @After
-    public void after() throws Exception {
+    logger.info("-----{}-----", "错误的身份证");
+
+    for (String idCard : notIDCardList) {
+      boolean isIDCard = IdcardChecker.isIdcard(idCard);
+      logger.info("{} is IDCard : {}", idCard, isIDCard);
+      assertFalse(isIDCard);
     }
-
-    /**
-     * Method: isSecondIDCard(String idCard)
-     */
-    @Test
-    public void testIsSecondIDCard() throws Exception {
-
-        logger.info("-----{}-----", "正确的身份证");
-
-        for (String idCard : idCardList) {
-            boolean isIDCard = IdcardChecker.isIdcard(idCard);
-            logger.info("{} is IDCard : {}", idCard, isIDCard);
-            assertTrue(isIDCard);
-        }
-
-        logger.info("-----{}-----", "错误的身份证");
-
-        for (String idCard : notIDCardList) {
-            boolean isIDCard = IdcardChecker.isIdcard(idCard);
-            logger.info("{} is IDCard : {}", idCard, isIDCard);
-            assertFalse(isIDCard);
-        }
-    }
+  }
 
 
 } 

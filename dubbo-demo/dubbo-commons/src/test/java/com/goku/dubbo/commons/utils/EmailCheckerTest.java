@@ -21,45 +21,45 @@ import static org.junit.Assert.assertTrue;
  */
 public class EmailCheckerTest {
 
-    private static Logger logger = LoggerFactory.getLogger(EmailChecker.class);
+  private static Logger logger = LoggerFactory.getLogger(EmailChecker.class);
 
-    private List<String> emailList = Lists.newArrayList();
-    private List<String> notEmailList = Lists.newArrayList();
+  private List<String> emailList = Lists.newArrayList();
+  private List<String> notEmailList = Lists.newArrayList();
 
-    @Before
-    public void before() throws Exception {
-        emailList.add("fuyongde@foxmail.com");
-        emailList.add("fu.yongde@163.com");
-        emailList.add("fu_yongde@163.com");
+  @Before
+  public void before() throws Exception {
+    emailList.add("fuyongde@foxmail.com");
+    emailList.add("fu.yongde@163.com");
+    emailList.add("fu_yongde@163.com");
 
-        notEmailList.add("abc");
-        notEmailList.add("abc@ddd");
-        notEmailList.add("sdf-sfds@#dsf");
-        notEmailList.add("傅永德@foxmail.com");
+    notEmailList.add("abc");
+    notEmailList.add("abc@ddd");
+    notEmailList.add("sdf-sfds@#dsf");
+    notEmailList.add("傅永德@foxmail.com");
+  }
+
+  @After
+  public void after() throws Exception {
+  }
+
+  /**
+   * Method: isEmail(String email)
+   */
+  @Test
+  public void testIsEmail() throws Exception {
+
+    for (String email : emailList) {
+      boolean isEmail = EmailChecker.isEmail(email);
+      logger.info("{} is email : {}", email, isEmail);
+      assertTrue(isEmail);
     }
 
-    @After
-    public void after() throws Exception {
+    for (String email : notEmailList) {
+      boolean isEmail = EmailChecker.isEmail(email);
+      logger.info("{} is email : {}", email, isEmail);
+      assertFalse(isEmail);
     }
-
-    /**
-     * Method: isEmail(String email)
-     */
-    @Test
-    public void testIsEmail() throws Exception {
-
-        for (String email : emailList) {
-            boolean isEmail = EmailChecker.isEmail(email);
-            logger.info("{} is email : {}", email, isEmail);
-            assertTrue(isEmail);
-        }
-
-        for (String email : notEmailList) {
-            boolean isEmail = EmailChecker.isEmail(email);
-            logger.info("{} is email : {}", email, isEmail);
-            assertFalse(isEmail);
-        }
-    }
+  }
 
 
 } 

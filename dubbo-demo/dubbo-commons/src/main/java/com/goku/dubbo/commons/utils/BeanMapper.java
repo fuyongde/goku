@@ -18,7 +18,9 @@ import java.util.List;
  */
 public class BeanMapper {
 
-  /** 持有Dozer单例, 避免重复创建DozerMapper消耗资源. **/
+  /**
+   * 持有Dozer单例, 避免重复创建DozerMapper消耗资源.
+   **/
   private static DozerBeanMapper dozer = new DozerBeanMapper();
 
   /**

@@ -9,9 +9,7 @@ import org.junit.Test;
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * @author fuyongde
@@ -21,35 +19,35 @@ import static org.junit.Assert.assertTrue;
 public class DateUtilsTest {
 
 
-    private Date date;
+  private Date date;
 
-    @Before
-    public void before() throws Exception {
-        date = new Date();
-    }
+  @Before
+  public void before() throws Exception {
+    date = new Date();
+  }
 
-    @After
-    public void after() throws Exception {
+  @After
+  public void after() throws Exception {
 
-    }
+  }
 
-    @Test
-    public void testIsSameDay() throws Exception {
-        Date today = new Date();
-        boolean isSameDay = DateUtils.isSameDay(date, today);
-        assertTrue(isSameDay);
+  @Test
+  public void testIsSameDay() throws Exception {
+    Date today = new Date();
+    boolean isSameDay = DateUtils.isSameDay(date, today);
+    assertTrue(isSameDay);
 
-        Date yestoday = DateUtils.addDays(today, -1);
-        isSameDay = DateUtils.isSameDay(date, yestoday);
-        assertFalse(isSameDay);
-    }
+    Date yestoday = DateUtils.addDays(today, -1);
+    isSameDay = DateUtils.isSameDay(date, yestoday);
+    assertFalse(isSameDay);
+  }
 
-    @Test
-    public void testParse() throws Exception {
-        Date date = DateUtils.parseDate("2017-11-07 11:47:59", DatePattern.PATTERN_1);
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        assertEquals(2017, calendar.get(Calendar.YEAR));
-    }
+  @Test
+  public void testParse() throws Exception {
+    Date date = DateUtils.parseDate("2017-11-07 11:47:59", DatePattern.PATTERN_1);
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(date);
+    assertEquals(2017, calendar.get(Calendar.YEAR));
+  }
 
 }

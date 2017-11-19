@@ -9,13 +9,13 @@ import static com.goku.dubbo.commons.consts.NumberPattern.ALL_DIGITAL_PATTERN;
  */
 public class NumberChecker {
 
-    /**
-     * 数字验证
-     *
-     * @param str
-     * @return
-     */
-    public static boolean isDigital(String str) {
-        return str.matches(ALL_DIGITAL_PATTERN);
-    }
+  /**
+   * 数字验证
+   *
+   * @param str
+   * @return
+   */
+  public static boolean isDigital(String str) {
+    return str.matches(ALL_DIGITAL_PATTERN);
+  }
 }

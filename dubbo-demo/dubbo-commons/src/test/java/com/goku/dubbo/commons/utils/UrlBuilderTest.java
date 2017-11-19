@@ -14,23 +14,23 @@ import static org.junit.Assert.assertEquals;
  */
 public class UrlBuilderTest {
 
-    public static final String URL_BAIDU = "http://www.baidu.com";
+  public static final String URL_BAIDU = "http://www.baidu.com";
 
-    @Before
-    public void before() throws Exception {
-    }
+  @Before
+  public void before() throws Exception {
+  }
 
-    @After
-    public void after() throws Exception {
-    }
+  @After
+  public void after() throws Exception {
+  }
 
-    @Test
-    public void testBuildURL() throws Exception {
-        String baiduUrl = UrlBuilder.fromString(URL_BAIDU).toString();
-        assertEquals(URL_BAIDU, baiduUrl);
+  @Test
+  public void testBuildURL() throws Exception {
+    String baiduUrl = UrlBuilder.fromString(URL_BAIDU).toString();
+    assertEquals(URL_BAIDU, baiduUrl);
 
-        String baiduUrlWithParam = UrlBuilder.fromString(URL_BAIDU)
-                .addParameter("name", "fuyongde").toString();
-        assertEquals("http://www.baidu.com?name=fuyongde", baiduUrlWithParam);
-    }
+    String baiduUrlWithParam = UrlBuilder.fromString(URL_BAIDU)
+        .addParameter("name", "fuyongde").toString();
+    assertEquals("http://www.baidu.com?name=fuyongde", baiduUrlWithParam);
+  }
 }
