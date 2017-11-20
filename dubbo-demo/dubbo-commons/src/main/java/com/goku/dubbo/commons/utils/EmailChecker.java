@@ -12,9 +12,6 @@ import static com.goku.dubbo.commons.consts.EmailPattern.EMAIL_PATTERN;
 public class EmailChecker {
 
   public static boolean isEmail(String email) {
-    if (StringUtils.isBlank(email)) {
-      return false;
-    }
-    return email.matches(EMAIL_PATTERN);
+    return StringUtils.isNotBlank(email) && email.matches(EMAIL_PATTERN);
   }
 }

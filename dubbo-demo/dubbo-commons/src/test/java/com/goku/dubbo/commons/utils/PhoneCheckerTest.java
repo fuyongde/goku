@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class PhoneCheckerTest {
 
-  private static Logger logger = LoggerFactory.getLogger(PhoneChecker.class);
+  private static final Logger logger = LoggerFactory.getLogger(PhoneChecker.class);
 
   private List<String> mobileList = Lists.newArrayList();
   private List<String> notMobileList = Lists.newArrayList();

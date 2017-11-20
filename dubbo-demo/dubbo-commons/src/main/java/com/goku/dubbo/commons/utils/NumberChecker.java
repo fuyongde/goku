@@ -1,5 +1,7 @@
 package com.goku.dubbo.commons.utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 import static com.goku.dubbo.commons.consts.NumberPattern.ALL_DIGITAL_PATTERN;
 
 /**
@@ -12,10 +14,10 @@ public class NumberChecker {
   /**
    * 数字验证
    *
-   * @param str
-   * @return
+   * @param number 字符串类型的数字
+   * @return true=是数字|false=不是数字
    */
-  public static boolean isDigital(String str) {
-    return str.matches(ALL_DIGITAL_PATTERN);
+  public static boolean isDigital(String number) {
+    return StringUtils.isNotBlank(number) && number.matches(ALL_DIGITAL_PATTERN);
   }
 }

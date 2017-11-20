@@ -23,13 +23,13 @@ import static com.goku.dubbo.commons.consts.PinyinPattern.*;
  */
 public class PinyinUtils {
 
-  private static Logger logger = LoggerFactory.getLogger(PinyinUtils.class);
+  private static final Logger logger = LoggerFactory.getLogger(PinyinUtils.class);
 
   /**
    * 获取汉字的首字母
    *
-   * @param chinese
-   * @return
+   * @param chinese 汉字
+   * @return 汉字的拼音首字母
    */
   public static String getAlpha(String chinese) {
 
@@ -48,7 +48,7 @@ public class PinyinUtils {
    *
    * @param chinese          汉字
    * @param excludeRegexList 需要剔除掉的字符的正则
-   * @return
+   * @return 汉字的首字母
    */
   public static String getAlpha(String chinese, List<String> excludeRegexList) {
 
@@ -74,7 +74,7 @@ public class PinyinUtils {
    * 将汉语转为拼音字母，英文不变
    *
    * @param input 待处理的字符
-   * @return
+   * @return 汉字的所有拼音
    */
   public static String getAllLetter(String input) {
     List<String> excludeRegexList = Lists.newArrayList(
@@ -92,7 +92,7 @@ public class PinyinUtils {
    *
    * @param input            待处理的字符
    * @param excludeRegexList 要过滤掉的特殊字符的正则
-   * @return
+   * @return 汉字的所有拼音
    */
   public static String getAllLetter(String input, List<String> excludeRegexList) {
     Validate.notBlank(input);
@@ -114,7 +114,6 @@ public class PinyinUtils {
           sb.append(PinyinHelper.toHanyuPinyinStringArray(tmp, format)[0]);
         } catch (BadHanyuPinyinOutputFormatCombination badHanyuPinyinOutputFormatCombination) {
           logger.error("getAllLetter error, input is : {}, bad char is : {}", input, tmp);
-          continue;
         }
       } else {
         sb.append(tmp);

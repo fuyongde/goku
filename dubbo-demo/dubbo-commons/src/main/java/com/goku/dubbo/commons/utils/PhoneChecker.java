@@ -19,26 +19,20 @@ public class PhoneChecker {
    * 联通号码段:130、131、132、136、185、186、145
    * 电信号码段:133、153、180、189
    *
-   * @param mobile
-   * @return
+   * @param mobile 手机号码
+   * @return true=是正确的手机号码|false=不是正确的手机号码
    */
   public static boolean isMobile(String mobile) {
-    if (StringUtils.isBlank(mobile)) {
-      return false;
-    }
-    return mobile.matches(MOBILE_PATTERN);
+    return StringUtils.isNotBlank(mobile) && mobile.matches(MOBILE_PATTERN);
   }
 
   /**
    * 验证固话号码
    *
-   * @param telephone
-   * @return
+   * @param telephone 固定电话的号码
+   * @return true=是固定的电话号码|false=不是固定的电话号码
    */
   public static boolean isTelephone(String telephone) {
-    if (StringUtils.isBlank(telephone)) {
-      return false;
-    }
-    return telephone.matches(TELEPHONE_PATTERN);
+    return StringUtils.isNotBlank(telephone) && telephone.matches(TELEPHONE_PATTERN);
   }
 }

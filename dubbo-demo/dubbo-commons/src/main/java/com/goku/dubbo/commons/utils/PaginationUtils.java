@@ -19,8 +19,8 @@ public class PaginationUtils {
    *
    * @param list     原始数据
    * @param pageSize 页面大小
-   * @param <T>
-   * @return
+   * @param <T>      任何类型
+   * @return 分页后的数据
    */
   private static <T> List<List<T>> split(@NonNull List<T> list, int pageSize) {
 
@@ -49,8 +49,8 @@ public class PaginationUtils {
    * @param list      原始数据
    * @param pageIndex 页码
    * @param pageSize  页面大小
-   * @param <T>
-   * @return
+   * @param <T>       任何类型
+   * @return 当页的数据
    */
   public static <T> List<T> getByPage(List<T> list, int pageIndex, int pageSize) {
     pageIndex = pageIndex < PAGE_INDEX_MIN ? PAGE_INDEX_DEFAULT : pageIndex;

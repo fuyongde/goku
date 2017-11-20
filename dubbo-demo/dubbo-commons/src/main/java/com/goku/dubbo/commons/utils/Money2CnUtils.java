@@ -31,7 +31,7 @@ public class Money2CnUtils {
   /**
    * 特殊字符：零元整
    */
-  private static final String CN_ZEOR_FULL = "零元" + CN_FULL;
+  private static final String CN_ZERO_FULL = "零元" + CN_FULL;
 
   /**
    * 十进制
@@ -45,18 +45,18 @@ public class Money2CnUtils {
    * @return 对应的汉语大写
    */
   public static String toCN(BigDecimal money) {
-    StringBuffer sb = new StringBuffer();
+    StringBuilder sb = new StringBuilder();
     // -1, 0, or 1 as the value of this BigDecimal is negative, zero, or positive.
     int signum = money.signum();
     // 零元整的情况
     if (signum == 0) {
-      return CN_ZEOR_FULL;
+      return CN_ZERO_FULL;
     }
     //这里会进行金额的四舍五入
     long number = money.movePointRight(MONEY_PRECISION).setScale(0, 4).abs().longValue();
     // 得到小数点后两位值
     long scale = number % 100;
-    int numUnit = 0;
+    int numUnit;
     int numIndex = 0;
     boolean getZero = false;
     // 判断最后两位数，一共有四中情况：00 = 0, 01 = 1, 10, 11

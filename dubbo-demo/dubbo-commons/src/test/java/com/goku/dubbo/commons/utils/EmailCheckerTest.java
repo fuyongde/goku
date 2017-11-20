@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class EmailCheckerTest {
 
-  private static Logger logger = LoggerFactory.getLogger(EmailChecker.class);
+  private static final Logger logger = LoggerFactory.getLogger(EmailChecker.class);
 
   private List<String> emailList = Lists.newArrayList();
   private List<String> notEmailList = Lists.newArrayList();

@@ -10,7 +10,7 @@ public interface IdcardPattern {
   /**
    * 一代身份证号码长度
    */
-  int FIRST_IDCART_LENGTH = 15;
+  int FIRST_IDCARD_LENGTH = 15;
 
   /**
    * 二代身份证号码长度

@@ -28,7 +28,7 @@ public class IdcardChecker {
     if (StringUtils.isBlank(idcard)) {
       return false;
     }
-    if (idcard.length() == FIRST_IDCART_LENGTH) {
+    if (idcard.length() == FIRST_IDCARD_LENGTH) {
       return is15IdCard(idcard);
     }
     return is18Idcard(idcard);
@@ -64,8 +64,8 @@ public class IdcardChecker {
    * 5.通过上面得知如果余数是2，就会在身份证的第18位数字上出现罗马数字的Ⅹ。如果余数是10，身份证的最后一位号码就是2。
    * </p>
    *
-   * @param idcard
-   * @return
+   * @param idcard 身份证号
+   * @return true=是身份证号|false=不是身份证号
    */
   public static boolean is18Idcard(String idcard) {
     if (StringUtils.isBlank(idcard)) {
@@ -106,9 +106,7 @@ public class IdcardChecker {
 
     int[] bit = convertCharToInt(idcard17Array);
 
-    int sum17 = 0;
-
-    sum17 = getPowerSum(bit);
+    int sum17 = getPowerSum(bit);
 
     // 将和值与11取模得到余数进行校验码判断
     String checkCode = getCheckCodeBySum(sum17);
@@ -116,11 +114,7 @@ public class IdcardChecker {
       return false;
     }
     // 将身份证的第18位与算出来的校码进行匹配，不相等就为假
-    if (!idcard18Code.equalsIgnoreCase(checkCode)) {
-      return false;
-    }
-
-    return true;
+    return idcard18Code.equalsIgnoreCase(checkCode);
   }
 
   /**
@@ -130,15 +124,15 @@ public class IdcardChecker {
    * 只校验省份和出生年月日
    * </pre>
    *
-   * @param idcard
-   * @return
+   * @param idcard 身份证号
+   * @return true=是身份证号|false=不是身份证号
    */
   public static boolean is15IdCard(String idcard) {
     if (idcard == null) {
       return false;
     }
     // 非15位为假
-    if (idcard.length() != FIRST_IDCART_LENGTH) {
+    if (idcard.length() != FIRST_IDCARD_LENGTH) {
       return false;
     }
 
@@ -168,16 +162,16 @@ public class IdcardChecker {
   /**
    * 将15位的身份证转成18位身份证
    *
-   * @param idcard
-   * @return
+   * @param idcard 15位身份证号
+   * @return 18位身份证号
    */
-  public static String convertIdcarBy15bit(String idcard) {
+  public static String convertIdcardBy15bit(String idcard) {
     if (StringUtils.isBlank(idcard)) {
       return null;
     }
 
     // 非15位身份证
-    if (idcard.length() != FIRST_IDCART_LENGTH) {
+    if (idcard.length() != FIRST_IDCARD_LENGTH) {
       return null;
     }
 
@@ -194,7 +188,7 @@ public class IdcardChecker {
 
     String birthday = idcard.substring(6, 12);
 
-    Date birthDate = null;
+    Date birthDate;
     try {
       birthDate = DateUtils.parseDate(birthday, DatePattern.PATTERN_5);
     } catch (ParseException e1) {
@@ -208,7 +202,6 @@ public class IdcardChecker {
     String idcard17 = idcard.substring(0, 6) + year + idcard.substring(8);
 
     char[] idcard17Array = idcard17.toCharArray();
-    String checkCode = "";
 
     // 将字符数组转为整型数组
     int[] bit = convertCharToInt(idcard17Array);
@@ -216,7 +209,7 @@ public class IdcardChecker {
     int sum17 = getPowerSum(bit);
 
     // 获取和值与11取模得到余数进行校验码
-    checkCode = getCheckCodeBySum(sum17);
+    String checkCode = getCheckCodeBySum(sum17);
 
     // 获取不到校验位
     if (null == checkCode) {
@@ -230,12 +223,12 @@ public class IdcardChecker {
   /**
    * 校验省份
    *
-   * @param provinceCode
-   * @return 合法返回TRUE，否则返回FALSE
+   * @param provinceCode 省份编码
+   * @return 合法返回TRUE|否则返回FALSE
    */
   private static boolean checkProvinceCode(String provinceCode) {
 
-    if (StringUtils.isBlank(provinceCode)) {
+    if (StringUtils.isNotBlank(provinceCode)) {
       return false;
     }
 
@@ -250,8 +243,8 @@ public class IdcardChecker {
   /**
    * 将身份证的每位和对应位的加权因子相乘之后，再得到和值
    *
-   * @param bit
-   * @return
+   * @param bit 身份证前17位
+   * @return 和值
    */
   private static int getPowerSum(int[] bit) {
 
@@ -274,7 +267,7 @@ public class IdcardChecker {
   /**
    * 将和值与11取模得到余数进行校验码判断
    *
-   * @param sum17
+   * @param sum17 前17位的和值
    * @return 校验位
    */
   private static String getCheckCodeBySum(int sum17) {
@@ -320,14 +313,14 @@ public class IdcardChecker {
   /**
    * 将字符数组转为整型数组
    *
-   * @param c
-   * @return
-   * @throws NumberFormatException
+   * @param chars 字符串数组
+   * @return 整形数组
+   * @throws NumberFormatException 该方法会抛出数字转化的异常
    */
-  private static int[] convertCharToInt(char[] c) throws NumberFormatException {
-    int[] a = new int[c.length];
+  private static int[] convertCharToInt(char[] chars) throws NumberFormatException {
+    int[] a = new int[chars.length];
     int k = 0;
-    for (char temp : c) {
+    for (char temp : chars) {
       a[k++] = Integer.parseInt(String.valueOf(temp));
     }
     return a;

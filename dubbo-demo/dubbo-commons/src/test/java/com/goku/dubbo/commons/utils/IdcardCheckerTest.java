@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class IdcardCheckerTest {
 
-  private static Logger logger = LoggerFactory.getLogger(IdcardCheckerTest.class);
+  private static final Logger logger = LoggerFactory.getLogger(IdcardCheckerTest.class);
 
   List<String> idCardList = Lists.newArrayList();
 

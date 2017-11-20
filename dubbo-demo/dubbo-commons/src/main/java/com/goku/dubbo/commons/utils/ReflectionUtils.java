@@ -22,7 +22,7 @@ public class ReflectionUtils {
 
   private static final String CGLIB_CLASS_SEPARATOR = "$$";
 
-  private static Logger logger = LoggerFactory.getLogger(ReflectionUtils.class);
+  private static final Logger logger = LoggerFactory.getLogger(ReflectionUtils.class);
 
   /**
    * 调用Getter方法.
@@ -126,7 +126,8 @@ public class ReflectionUtils {
         Field field = superClass.getDeclaredField(fieldName);
         makeAccessible(field);
         return field;
-      } catch (NoSuchFieldException e) {// NOSONAR
+      } catch (NoSuchFieldException e) {
+        // NO SONAR
         // Field不在当前类定义,继续向上转型
       }
     }

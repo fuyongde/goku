@@ -37,8 +37,8 @@ public class DateUtilsTest {
     boolean isSameDay = DateUtils.isSameDay(date, today);
     assertTrue(isSameDay);
 
-    Date yestoday = DateUtils.addDays(today, -1);
-    isSameDay = DateUtils.isSameDay(date, yestoday);
+    Date yesterday = DateUtils.addDays(today, -1);
+    isSameDay = DateUtils.isSameDay(date, yesterday);
     assertFalse(isSameDay);
   }
 
