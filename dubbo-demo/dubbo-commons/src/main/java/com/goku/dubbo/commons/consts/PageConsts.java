@@ -24,4 +24,13 @@ public interface PageConsts {
    * 默认页面大小
    */
   int PAGE_SIZE_DEFAULT = 10;
+
+  /**
+   * 最小的总页数
+   */
+  int TOTAL_PAGE_MIN = 0;
+  /**
+   * 最小的数据总数
+   */
+  int COUNT_MIN = 0;
 }

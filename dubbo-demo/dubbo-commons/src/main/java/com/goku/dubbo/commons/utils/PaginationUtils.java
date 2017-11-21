@@ -56,4 +56,33 @@ public class PaginationUtils {
     pageIndex = pageIndex < PAGE_INDEX_MIN ? PAGE_INDEX_DEFAULT : pageIndex;
     return split(list, pageSize).get(pageIndex);
   }
+
+  /**
+   * 计算总页数
+   *
+   * @param count    总数
+   * @param pageSize 页面大小
+   *
+   * @return 总页数
+   */
+  public static int totalPage(int count, int pageSize) {
+    count = count < COUNT_MIN ? COUNT_MIN : count;
+    pageSize = pageSize < PAGE_SIZE_MIN ? PAGE_SIZE_DEFAULT : pageSize;
+    return (count + pageSize - 1) / pageSize;
+  }
+
+  /**
+   * 是否有下一页
+   *
+   * @param count     总记录数
+   * @param pageIndex 当前页面
+   * @param pageSize  页面大小
+   *
+   * @return true=有下一页|false=没有下一页
+   */
+  public static boolean hasMore(int count, int pageIndex, int pageSize) {
+    int totalPage = totalPage(count, pageSize);
+    pageIndex = pageIndex < PAGE_INDEX_MIN ? PAGE_INDEX_DEFAULT : pageIndex;
+    return (pageIndex + 1) < totalPage;
+  }
 }

@@ -2,10 +2,14 @@ package com.goku.dubbo.commons.utils;
 
 import com.google.common.collect.Lists;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * PaginationUtils Tester.
@@ -40,6 +44,12 @@ public class PaginationUtilsTest {
     int pageSize = 0;
     List<Integer> currentPage = PaginationUtils.getByPage(list, pageIndex, pageSize);
     currentPage.forEach(System.out::println);
+
+    boolean hasMore = PaginationUtils.hasMore(list.size(), 10, 10);
+    assertFalse(hasMore);
+
+    hasMore = PaginationUtils.hasMore(list.size(), 9, 10);
+    assertTrue(hasMore);
   }
 
 
