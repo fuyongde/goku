@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -23,9 +24,9 @@ public class IdcardCheckerTest {
 
   private static final Logger logger = LoggerFactory.getLogger(IdcardCheckerTest.class);
 
-  List<String> idCardList = Lists.newArrayList();
+  private List<String> idCardList = Lists.newArrayList();
 
-  List<String> notIDCardList = Lists.newArrayList();
+  private List<String> notIDCardList = Lists.newArrayList();
 
   @Before
   public void before() throws Exception {
@@ -67,6 +68,10 @@ public class IdcardCheckerTest {
       logger.info("{} is IDCard : {}", idCard, isIDCard);
       assertFalse(isIDCard);
     }
+
+    String idcard = "310108800902023";
+    String idcard18 = IdcardChecker.convertIdcardBy15bit(idcard);
+    assertEquals("310108198009020231", idcard18);
   }
 
 

@@ -1,6 +1,7 @@
 package com.goku.dubbo.commons.utils;
 
 import com.goku.dubbo.commons.consts.DatePattern;
+import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 
@@ -227,17 +228,7 @@ public class IdcardChecker {
    * @return 合法返回TRUE|否则返回FALSE
    */
   private static boolean checkProvinceCode(String provinceCode) {
-
-    if (StringUtils.isNotBlank(provinceCode)) {
-      return false;
-    }
-
-    for (String id : CITY_CODE) {
-      if (StringUtils.equals(id, provinceCode)) {
-        return true;
-      }
-    }
-    return false;
+    return StringUtils.isNotBlank(provinceCode) && Lists.newArrayList(CITY_CODE).contains(provinceCode);
   }
 
   /**
@@ -305,6 +296,8 @@ public class IdcardChecker {
         break;
       case 0:
         checkCode = "1";
+        break;
+      default:
         break;
     }
     return checkCode;
