@@ -30,6 +30,8 @@
     <commons-lang3.version>3.6</commons-lang3.version>
     <commons-io.version>2.6</commons-io.version>
 
+    <poi-ooxml.version>3.17</poi-ooxml.version>
+
     <dozer.version>5.5.1</dozer.version>
 
     <guava.version>22.0</guava.version>
@@ -169,6 +171,13 @@
         <artifactId>lombok</artifactId>
         <version>${lombok.verstion}</version>
         <scope>provided</scope>
+      </dependency>
+
+      <!-- poi-ooxml -->
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>${poi-ooxml.version}</version>
       </dependency>
 
       <!-- junit -->
