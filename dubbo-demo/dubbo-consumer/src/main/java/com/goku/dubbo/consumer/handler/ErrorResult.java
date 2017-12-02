@@ -29,6 +29,16 @@ public class ErrorResult<T> implements Serializable {
   private T message;
   private String path;
 
+  public ErrorResult() {
+  }
+
+  public ErrorResult(int status, T message, String path) {
+    this.timestamp = LocalDateTime.now();
+    this.status = status;
+    this.message = message;
+    this.path = path;
+  }
+
   public LocalDateTime getTimestamp() {
     return timestamp;
   }

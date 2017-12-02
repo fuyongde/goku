@@ -5,7 +5,6 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.Clock;
 
 /**
  * @author fuyongde
@@ -29,7 +28,7 @@ public class DateFilter implements Filter {
 
     if (response instanceof HttpServletResponse) {
       HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-      httpServletResponse.setHeader("NOW", String.valueOf(Clock.systemDefaultZone().millis()));
+      httpServletResponse.setHeader("NOW", String.valueOf(System.currentTimeMillis()));
     }
 
     chain.doFilter(request, response);
