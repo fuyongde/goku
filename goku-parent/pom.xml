@@ -52,7 +52,10 @@
     <lombok.verstion>1.16.18</lombok.verstion>
 
     <mybatis-spring-boot-starter.version>1.3.0</mybatis-spring-boot-starter.version>
+
     <java.version>1.8</java.version>
+
+    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -200,11 +203,11 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
+          <version>${maven-compiler-plugin.version}</version>
           <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
-            <encoding>UTF-8</encoding>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
           </configuration>
         </plugin>
 
