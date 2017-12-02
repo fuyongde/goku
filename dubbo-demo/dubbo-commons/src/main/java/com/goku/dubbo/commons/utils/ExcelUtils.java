@@ -3,13 +3,14 @@ package com.goku.dubbo.commons.utils;
 import com.goku.dubbo.commons.excel.Style;
 import com.goku.dubbo.commons.excel.Title;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.streaming.SXSSFCell;
 import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -21,21 +22,18 @@ import java.util.Map;
  */
 public class ExcelUtils {
 
-
-
     /**
      * 创建excel文件
      *
-     * @param directory  文件夹
-     * @param fileName   文件名
      * @param sheetNames sheet名称
      * @param titles     每个Sheet的标题名称
      * @param datas      每个Sheet的数据
      *
+     * @return
+     *
      * @throws IOException
      */
-    public static void createExcel(String directory, String fileName, List<String> sheetNames, List<Title[]> titles,
-                                   List<List<Map<String, String>>> datas) throws IOException {
+    public static byte[] createExcel(List<String> sheetNames, List<Title[]> titles, List<List<Map<String, String>>> datas) throws IOException {
         //创建Workbook
         SXSSFWorkbook workbook = new SXSSFWorkbook();
 
@@ -79,11 +77,29 @@ public class ExcelUtils {
             }
         }
 
-        File file = new File(directory, fileName);
-        FileOutputStream outputStream = new FileOutputStream(file);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         workbook.write(outputStream);
+        byte[] result = outputStream.toByteArray();
         outputStream.close();
+        return result;
     }
 
+    /**
+     * 将数据写入到excel
+     *
+     * @param directory  目录
+     * @param fileName   文件名
+     * @param sheetNames sheet名称
+     * @param titles     标题
+     * @param datas      源数据
+     *
+     * @throws IOException
+     */
+    public static void createExcel(String directory, String fileName, List<String> sheetNames, List<Title[]> titles,
+                                   List<List<Map<String, String>>> datas) throws IOException {
+        byte[] bytes = createExcel(sheetNames, titles, datas);
+        File file = new File(directory, fileName);
+        FileUtils.writeByteArrayToFile(file, bytes);
+    }
 
 }
