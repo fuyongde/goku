@@ -26,11 +26,11 @@ dubbo-demo/dubbo-api/mvnw
 dubbo-demo/dubbo-api/mvnw.cmd
 dubbo-demo/dubbo-api/target
 
-dubbo-demo/dubbo-commons/.mvn
-dubbo-demo/dubbo-commons/dubbo-commons.iml
-dubbo-demo/dubbo-commons/mvnw
-dubbo-demo/dubbo-commons/mvnw.cmd
-dubbo-demo/dubbo-commons/target
+goku-commons/.mvn
+goku-commons/goku-commons.iml
+goku-commons/mvnw
+goku-commons/mvnw.cmd
+goku-commons/target
 
 dubbo-demo/dubbo-provider/.mvn
 dubbo-demo/dubbo-provider/dubbo-provider.iml
