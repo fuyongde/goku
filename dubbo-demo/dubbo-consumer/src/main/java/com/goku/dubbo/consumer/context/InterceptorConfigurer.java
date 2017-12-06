@@ -13,18 +13,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class InterceptorConfigurer extends WebMvcConfigurerAdapter {
 
-    @Autowired
-    private IPInterceptor ipInterceptor;
+  @Autowired
+  private IPInterceptor ipInterceptor;
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        String[] IPPathPatterns = {
-                "/**"
-        };
+  @Override
+  public void addInterceptors(InterceptorRegistry registry) {
+    String[] IPPathPatterns = {
+        "/**"
+    };
 
-        registry.addInterceptor(ipInterceptor)
-                .addPathPatterns(IPPathPatterns);
-        super.addInterceptors(registry);
-    }
+    registry.addInterceptor(ipInterceptor)
+        .addPathPatterns(IPPathPatterns);
+    super.addInterceptors(registry);
+  }
 
 }

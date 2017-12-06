@@ -62,7 +62,6 @@ public class PaginationUtils {
    *
    * @param count    总数
    * @param pageSize 页面大小
-   *
    * @return 总页数
    */
   public static int totalPage(int count, int pageSize) {
@@ -77,7 +76,6 @@ public class PaginationUtils {
    * @param count     总记录数
    * @param pageIndex 当前页面
    * @param pageSize  页面大小
-   *
    * @return true=有下一页|false=没有下一页
    */
   public static boolean hasMore(int count, int pageIndex, int pageSize) {

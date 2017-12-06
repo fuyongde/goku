@@ -2,8 +2,6 @@ package com.goku.dubbo.consumer.context;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import com.goku.dubbo.consumer.handler.ErrorResult;
 import com.google.common.collect.Sets;
 import org.slf4j.Logger;
@@ -27,41 +25,41 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 @Component
 public class IPInterceptor implements HandlerInterceptor {
 
-    private static Logger logger = LoggerFactory.getLogger(IPInterceptor.class);
+  private static Logger logger = LoggerFactory.getLogger(IPInterceptor.class);
 
-    private static ObjectMapper mapper = new ObjectMapper().registerModule(new Jdk8Module());
+  private static ObjectMapper mapper = new ObjectMapper().registerModule(new Jdk8Module());
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+  @Override
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        //获取当前的ip
-        String currentIP = ContextHolder.getIpAddress(request);
-        Set<String> securityIPSet = Sets.newHashSet(
-                "127.0.0.1"
-        );
-        boolean isAllowed = securityIPSet.contains(currentIP);
+    //获取当前的ip
+    String currentIP = ContextHolder.getIpAddress(request);
+    Set<String> securityIPSet = Sets.newHashSet(
+        "127.0.0.1"
+    );
+    boolean isAllowed = securityIPSet.contains(currentIP);
 
-        if (!isAllowed) {
+    if (!isAllowed) {
 
-            logger.error("非法IP：{}", currentIP);
+      logger.error("非法IP：{}", currentIP);
 
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            response.setHeader(CONTENT_TYPE, APPLICATION_JSON_UTF8_VALUE);
-            ErrorResult errorResult = new ErrorResult(HttpServletResponse.SC_FORBIDDEN, "非法IP", request.getContextPath());
-            response.getOutputStream().write(mapper.writeValueAsBytes(errorResult));
-            return false;
-        }
-
-        return true;
+      response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+      response.setHeader(CONTENT_TYPE, APPLICATION_JSON_UTF8_VALUE);
+      ErrorResult errorResult = new ErrorResult(HttpServletResponse.SC_FORBIDDEN, "非法IP", request.getContextPath());
+      response.getOutputStream().write(mapper.writeValueAsBytes(errorResult));
+      return false;
     }
 
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+    return true;
+  }
 
-    }
+  @Override
+  public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+  }
 
-    }
+  @Override
+  public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+
+  }
 }
