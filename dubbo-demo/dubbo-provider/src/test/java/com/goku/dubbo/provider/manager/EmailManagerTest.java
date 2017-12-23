@@ -1,5 +1,6 @@
 package com.goku.dubbo.provider.manager;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,6 +8,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.io.File;
 
 /**
  * EmailManager Tester.
@@ -41,5 +44,18 @@ public class EmailManagerTest {
     emailManager.sendMail(to, subject, text);
   }
 
+  /**
+   * Method: sendMail(String from, String to, String subject, String text)
+   */
+  @Test
+  public void testSendMailWithFiles() throws Exception {
+    String[] toArray = new String[]{"fuyongde@dafy.com"};
+    String[] ccArray = new String[]{"fuyongde@foxmail.com"};
+    String subject = "Goku变身";
+    String text = "自在极意功";
+    File file = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "fuyongde.txt");
+    File chinestFile = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "中文附件.txt");
+    emailManager.sendMailWithFile(toArray, ccArray, subject, text, new File[] {file, chinestFile});
+  }
 
 } 
