@@ -3,6 +3,7 @@ package com.goku.dubbo.commons.utils;
 import com.goku.dubbo.commons.excel.Title;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.apache.commons.lang3.SystemUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +35,7 @@ public class ExcelUtilsTest {
    */
   @Test
   public void testCreateExcel() throws Exception {
-    String directory = "D:\\";
+    String directory = SystemUtils.getUserDir().getPath();
     String fileName = "日报.xlsx";
     String[] sheetNames = new String[]{"投资", "提现"};
 
