@@ -87,6 +87,12 @@
         <groupId>com.alibaba</groupId>
         <artifactId>dubbo</artifactId>
         <version>${dubbo.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
 
       <!--zkclient-->

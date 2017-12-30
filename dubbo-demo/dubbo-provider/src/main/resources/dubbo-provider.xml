@@ -14,6 +14,6 @@
   <!-- 用dubbo协议在8500端口暴露服务 -->
   <dubbo:protocol name="dubbo" port="8500"/>
 
-  <dubbo:annotation package="com.goku.dubbo.provider.service"/>
+  <dubbo:annotation package="com.goku.dubbo.provider.inner"/>
 
 </beans>
