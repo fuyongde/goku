@@ -38,11 +38,6 @@
     </dependency>
 
     <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>dubbo</artifactId>
-    </dependency>
-
-    <dependency>
       <groupId>com.101tec</groupId>
       <artifactId>zkclient</artifactId>
     </dependency>
@@ -71,6 +66,16 @@
     </dependency>
 
     <dependency>
+      <groupId>com.alibaba.boot</groupId>
+      <artifactId>dubbo-spring-boot-starter</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <scope>runtime</scope>
@@ -83,7 +88,7 @@
   </dependencies>
 
   <build>
-    <finalName>druid-provider</finalName>
+    <finalName>dubbo-provider</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

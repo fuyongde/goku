@@ -48,6 +48,10 @@
     <appender-ref ref="infoFile"/>
   </logger>
 
+  <logger name="com.alibaba.dubbo" level="INFO">
+    <appender-ref ref="infoFile"/>
+  </logger>
+
   <logger name="com.goku.dubbo.provider.repository" level="DEBUG">
     <appender-ref ref="infoFile"/>
   </logger>

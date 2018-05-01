@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ImportResource;
  */
 @SpringBootApplication
 @ServletComponentScan
-@ImportResource({"classpath:dubbo-consumer.xml"})
 public class DubboConsumerApplication {
 
   public static void main(String[] args) {

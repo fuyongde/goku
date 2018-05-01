@@ -10,12 +10,12 @@ import java.util.Date;
 @Component
 public class SimpleJob {
 
-  @Scheduled(initialDelay = 1000L, fixedRate = 5000L)
+  @Scheduled(initialDelay = 1000L, fixedRate = 500000L)
   public void reportCurrentTime() {
     System.out.println("现在时间：" + DateFormatUtils.format(new Date(), DatePattern.PATTERN_1));
   }
 
-  @Scheduled(cron="*/5 * * * * *")
+  @Scheduled(cron="*/50000 * * * * *")
   public void sendMail() {
     System.out.println("发送邮件");
   }

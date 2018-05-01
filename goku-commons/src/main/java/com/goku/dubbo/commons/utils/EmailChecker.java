@@ -11,6 +11,11 @@ import static com.goku.dubbo.commons.consts.EmailPattern.EMAIL_PATTERN;
  */
 public class EmailChecker {
 
+  /**
+   * 是否为邮箱
+   * @param email
+   * @return
+   */
   public static boolean isEmail(String email) {
     return StringUtils.isNotBlank(email) && email.matches(EMAIL_PATTERN);
   }

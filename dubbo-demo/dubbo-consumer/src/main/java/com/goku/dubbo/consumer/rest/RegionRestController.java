@@ -1,10 +1,10 @@
 package com.goku.dubbo.consumer.rest;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.goku.dubbo.api.service.RegionService;
 import com.goku.dubbo.api.service.dto.RegionDTO;
 import com.goku.dubbo.commons.utils.BeanMapper;
 import com.goku.dubbo.consumer.rest.vo.RegionVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api/regions")
 public class RegionRestController {
 
-  @Autowired
+  @Reference
   private RegionService regionService;
 
   @GetMapping(value = "/{id}")

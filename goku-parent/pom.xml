@@ -20,11 +20,11 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+    <spring-boot.version>1.5.12.RELEASE</spring-boot.version>
 
     <druid-spring-boot-starter.version>1.1.2</druid-spring-boot-starter.version>
+    <dubbo-spring-boot-starter.version>0.1.0</dubbo-spring-boot-starter.version>
     <fastjson.version>1.2.36</fastjson.version>
-    <dubbo.version>2.5.8</dubbo.version>
 
     <zkclient.version>0.2</zkclient.version>
 
@@ -75,24 +75,17 @@
         <version>${druid-spring-boot-starter.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>com.alibaba.boot</groupId>
+        <artifactId>dubbo-spring-boot-starter</artifactId>
+        <version>${dubbo-spring-boot-starter.version}</version>
+      </dependency>
+
       <!--阿里Fastjson-->
       <dependency>
         <groupId>com.alibaba</groupId>
         <artifactId>fastjson</artifactId>
         <version>${fastjson.version}</version>
-      </dependency>
-
-      <!--阿里Dubbo-->
-      <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>dubbo</artifactId>
-        <version>${dubbo.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
 
       <!--zkclient-->
