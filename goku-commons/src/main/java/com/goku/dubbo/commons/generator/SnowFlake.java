@@ -4,15 +4,17 @@ package com.goku.dubbo.commons.generator;
  * @author fuyongde
  * @version V1.0
  * @date 2018/5/1 17:41
- * @desc TODO
+ * @desc 雪花算法
  */
 public class SnowFlake {
 
-  public static final int NODE_SHIFT = 10;
-  public static final int SEQ_SHIFT = 12;
+  private static final long START_TIME_STAMP = 1525229976179L;
 
-  public static final short MAX_NODE = 1024;
-  public static final short MAX_SEQUENCE = 4096;
+  private static final int NODE_SHIFT = 10;
+  private static final int SEQ_SHIFT = 12;
+
+  private static final short MAX_NODE = 1024;
+  private static final short MAX_SEQUENCE = 4096;
 
   private short sequence;
   private long referenceTime;
@@ -61,7 +63,7 @@ public class SnowFlake {
       referenceTime = currentTime;
     }
 
-    return currentTime << NODE_SHIFT << SEQ_SHIFT | node << SEQ_SHIFT | counter;
+    return (currentTime - START_TIME_STAMP) << NODE_SHIFT << SEQ_SHIFT | node << SEQ_SHIFT | counter;
   }
 
 }
