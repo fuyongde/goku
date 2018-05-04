@@ -15,15 +15,22 @@ public class InterceptorConfigurer extends WebMvcConfigurerAdapter {
 
   @Autowired
   private IPInterceptor ipInterceptor;
+  @Autowired
+  private RateInterceptor rateInterceptor;
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
     String[] IPPathPatterns = {
-        "/**"
+            "/**"
     };
 
-    registry.addInterceptor(ipInterceptor)
-        .addPathPatterns(IPPathPatterns);
+    String[] ratePathPatterns = {
+            "/**"
+    };
+
+    registry.addInterceptor(ipInterceptor).addPathPatterns(IPPathPatterns);
+    registry.addInterceptor(rateInterceptor).addPathPatterns(ratePathPatterns);
+
     super.addInterceptors(registry);
   }
 

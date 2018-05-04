@@ -49,12 +49,12 @@ public class EmailManagerTest {
    */
   @Test
   public void testSendMailWithFiles() throws Exception {
-    String[] toArray = new String[]{"fuyongde@dafy.com"};
+    String[] toArray = new String[]{"fuyongde@zhuifintech.com"};
     String[] ccArray = new String[]{"fuyongde@foxmail.com"};
     String subject = "Goku变身";
     String text = "自在极意功";
-    File file = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "fuyongde.txt");
-    File chinestFile = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "中文附件.txt");
+    File file = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "滴滴出行行程报销单滴滴出行行程报销单.pdf");
+    File chinestFile = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "滴滴出行行程报销单滴滴出行行程报销单.xlsx");
     emailManager.sendMailWithFile(toArray, ccArray, subject, text, new File[] {file, chinestFile});
   }
 
