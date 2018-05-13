@@ -2,6 +2,7 @@ package com.goku.dubbo.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.system.ApplicationPidFileWriter;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -13,6 +14,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class DubboProviderApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(DubboProviderApplication.class,args);
+    SpringApplication springApplication = new SpringApplication(DubboProviderApplication.class);
+    springApplication.addListeners(new ApplicationPidFileWriter());
+    springApplication.run(args);
   }
 }

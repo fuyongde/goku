@@ -81,7 +81,7 @@ public class SnowFlakeTest {
         for (Long l : timeStampSet) {
             int count = 0;
             for (Map<String, Object> objectMap : list) {
-                if (l.longValue() == (long) objectMap.get("timeStamp")) {
+                if (l == (long) objectMap.get("timeStamp")) {
                     count++;
                 }
             }

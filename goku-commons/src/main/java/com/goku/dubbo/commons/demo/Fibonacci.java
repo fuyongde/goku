@@ -39,12 +39,12 @@ public class Fibonacci {
     System.out.println(c);
   }
 
-  private static long recursiveFibonacci(int n) {
+  private static BigInteger recursiveFibonacci(int n) {
     if (n < 2) {
-      return 1;
+      return BigInteger.ONE;
     }
 
-    return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    return recursiveFibonacci(n - 1).add(recursiveFibonacci(n - 2));
   }
 
   public static BigInteger iterativeFibonacci(int n) {
@@ -76,7 +76,7 @@ public class Fibonacci {
     return IntStream.range(0, threadNum)    // 产生 [0, threadNum) 区间，用于将任务切分
         .parallel()                     // 使流并行化
         .map(i -> i < threadNum - 1 ? workload : lastWorkload)
-        .mapToObj(w -> matrix.pow(w))   // map    ->  mN = matrix ^ workload
+        .mapToObj(matrix::pow)   // map    ->  mN = matrix ^ workload
         .reduce((m1, m2) -> m1.mul(m2)) // reduce ->  m = m1 * m2 * ... * mN
         .map(m -> m.mul(primary))       // map    ->  m = m * primary
         .get().c;                       // get    ->  m.c

@@ -3,7 +3,6 @@ package com.goku.dubbo.provider.service;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.goku.dubbo.api.service.OrderService;
 import com.goku.dubbo.commons.generator.SnowFlake;
-import com.goku.dubbo.commons.generator.SnowFlakeUnused;
 import com.goku.dubbo.provider.config.NodeInfo;
 import com.goku.dubbo.provider.entity.Order;
 import com.goku.dubbo.provider.repository.OrderMapper;
