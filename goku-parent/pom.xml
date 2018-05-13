@@ -57,6 +57,7 @@
 
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+    <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -222,6 +223,13 @@
             <forkMode>once</forkMode>
             <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
           </configuration>
+        </plugin>
+
+        <!-- 打包插件 -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>${maven-assembly-plugin.version}</version>
         </plugin>
 
         <plugin>
