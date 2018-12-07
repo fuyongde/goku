@@ -7,5 +7,5 @@ package com.sunflower.goku.dubbo.api.service;
  * @desc 订单服务
  */
 public interface OrderService {
-  void createOrder(int i);
+    void createOrder(int i);
 }

@@ -12,35 +12,35 @@ import java.util.Properties;
  */
 public class ServiceException extends RuntimeException {
 
-  private static final Properties properties = new Properties();
+    private static final Properties properties = new Properties();
 
-  static {
-    try {
-      properties.load(new InputStreamReader(ServiceException.class.getResourceAsStream("/error.properties"), Charset.defaultCharset()));
-    } catch (IOException e) {
+    static {
+        try {
+            properties.load(new InputStreamReader(ServiceException.class.getResourceAsStream("/error.properties"), Charset.defaultCharset()));
+        } catch (IOException e) {
+
+        }
 
     }
 
-  }
+    private int errorCode;
 
-  private int errorCode;
+    public ServiceException() {
+        super(properties.getProperty(String.valueOf(100000)));
+        this.errorCode = 100000;
+    }
 
-  public ServiceException() {
-    super(properties.getProperty(String.valueOf(100000)));
-    this.errorCode = 100000;
-  }
+    public ServiceException(int errorCode) {
+        super(properties.getProperty(String.valueOf(errorCode)));
+        this.errorCode = errorCode;
+    }
 
-  public ServiceException(int errorCode) {
-    super(properties.getProperty(String.valueOf(errorCode)));
-    this.errorCode = errorCode;
-  }
+    public int getErrorCode() {
+        return errorCode;
+    }
 
-  public int getErrorCode() {
-    return errorCode;
-  }
-
-  public void setErrorCode(int errorCode) {
-    this.errorCode = errorCode;
-  }
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
+    }
 
 }

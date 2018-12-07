@@ -1,8 +1,8 @@
 package com.sunflower.goku.leaf.processor;
 
 import com.alibaba.dubbo.common.utils.NetUtils;
-import com.sunflower.goku.leaf.generator.SnowFlake;
 import com.sunflower.goku.leaf.config.LeafConfig;
+import com.sunflower.goku.leaf.generator.SnowFlake;
 import org.I0Itec.zkclient.ZkClient;
 import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
@@ -25,16 +25,10 @@ import java.util.stream.Collectors;
 @Configuration
 public class NodeProcessor {
 
-    private static Logger logger = LoggerFactory.getLogger(NodeProcessor.class);
-
     private static final String LETOU_LEAF = "/letou/leaf";
-
     private static final String ZK_SPLIT = "/";
-
     private static final String SERVER_SPLIT = ":";
-
     private static final String SERVER_ID = "%s" + SERVER_SPLIT + "%s";
-
     /**
      * leaf的持久化节点（用于保存节点的顺序编号）
      **/
@@ -43,7 +37,6 @@ public class NodeProcessor {
      * leaf的临时节点（用于保存活跃节点以及活跃心跳数）
      **/
     private static final String LEAF_TEMPORARY = LETOU_LEAF.concat("/temporary");
-
     /**
      * 持久化节点全路径
      **/
@@ -52,12 +45,6 @@ public class NodeProcessor {
      * 临时节点全路径
      **/
     private static final String TEMPORARY_PATH = LEAF_TEMPORARY + ZK_SPLIT + SERVER_ID;
-
-    /**
-     * 心跳间隔
-     */
-    private Long interval = 3000L;
-
     /**
      * Session失效时间
      **/
@@ -66,7 +53,11 @@ public class NodeProcessor {
      * Connection连接超时时间
      **/
     private static final int CONNECTION_TIMEOUT = 5000;
-
+    private static Logger logger = LoggerFactory.getLogger(NodeProcessor.class);
+    /**
+     * 心跳间隔
+     */
+    private Long interval = 3000L;
     private ZkClient zkClient;
 
     private String fullForeverPath;
@@ -76,6 +67,22 @@ public class NodeProcessor {
     private Environment environment;
     @Autowired
     private LeafConfig leafConfig;
+
+    private static String generateServerId(String ip, int dubboPort) {
+        return String.format(SERVER_ID, ip, dubboPort);
+    }
+
+    private static String generateForeverPath(String ip, int dubboPort) {
+        return String.format(FOREVER_PATH, ip, dubboPort);
+    }
+
+    private static String generateTemporaryPath(String ip, int dubboPort) {
+        return String.format(TEMPORARY_PATH, ip, dubboPort);
+    }
+
+    private static String generateForeverPath(String serverPath) {
+        return LEAF_FOREVER + ZK_SPLIT + serverPath;
+    }
 
     @PostConstruct
     public void init() {
@@ -244,22 +251,6 @@ public class NodeProcessor {
             logger.error("该节点最后一次时间戳:{}", lastTimestamp);
             throw new RuntimeException("发生时钟回拨，启动失败。最后一次时间戳：" + lastTimestamp + "，当前时间戳：" + now);
         }
-    }
-
-    private static String generateServerId(String ip, int dubboPort) {
-        return String.format(SERVER_ID, ip, dubboPort);
-    }
-
-    private static String generateForeverPath(String ip, int dubboPort) {
-        return String.format(FOREVER_PATH, ip, dubboPort);
-    }
-
-    private static String generateTemporaryPath(String ip, int dubboPort) {
-        return String.format(TEMPORARY_PATH, ip, dubboPort);
-    }
-
-    private static String generateForeverPath(String serverPath) {
-        return LEAF_FOREVER + ZK_SPLIT + serverPath;
     }
 
     public int getDubboPort() {

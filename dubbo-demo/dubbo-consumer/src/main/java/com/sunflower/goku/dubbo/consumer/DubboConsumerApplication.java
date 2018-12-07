@@ -11,7 +11,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @ServletComponentScan
 public class DubboConsumerApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(DubboConsumerApplication.class, args);
-  }
+    public static void main(String[] args) {
+        SpringApplication.run(DubboConsumerApplication.class, args);
+    }
 }

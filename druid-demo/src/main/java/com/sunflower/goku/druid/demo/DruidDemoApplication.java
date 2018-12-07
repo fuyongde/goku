@@ -11,7 +11,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @SpringBootApplication
 public class DruidDemoApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(DruidDemoApplication.class, args);
-  }
+    public static void main(String[] args) {
+        SpringApplication.run(DruidDemoApplication.class, args);
+    }
 }

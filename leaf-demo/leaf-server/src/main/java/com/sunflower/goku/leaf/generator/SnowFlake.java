@@ -7,12 +7,10 @@ package com.sunflower.goku.leaf.generator;
  */
 public class SnowFlake {
 
+    public static final short MAX_NODE = 1023;
     private static final long START_TIME_STAMP = 1525229976179L;
-
     private static final int NODE_SHIFT = 10;
     private static final int SEQ_SHIFT = 12;
-
-    public static final short MAX_NODE = 1023;
     private static final short MAX_SEQUENCE = 4095;
 
     private short sequence;
@@ -45,7 +43,7 @@ public class SnowFlake {
         long currentTime = System.currentTimeMillis();
         long counter;
 
-        synchronized(this) {
+        synchronized (this) {
 
             if (currentTime < referenceTime) {
                 throw new RuntimeException(String.format("Last referenceTime %s is after reference time %s", referenceTime, currentTime));

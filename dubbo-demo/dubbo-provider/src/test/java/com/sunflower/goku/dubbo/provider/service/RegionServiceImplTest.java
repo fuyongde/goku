@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.assertEquals;
-
 /**
  * RegionServiceImpl Tester.
  *
@@ -21,16 +19,16 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest
 public class RegionServiceImplTest {
 
-  @Autowired
-  private RegionService regionService;
+    @Autowired
+    private RegionService regionService;
 
-  /**
-   * Method: region(Integer id)
-   */
-  @Test
-  public void testRegion() throws Exception {
-    RegionDTO regionDTO = regionService.region(110000);
-    assertEquals("北京市", regionDTO.getName());
-  }
+    /**
+     * Method: region(Integer id)
+     */
+    @Test
+    public void testRegion() throws Exception {
+        RegionDTO regionDTO = regionService.region(110000);
+        assertEquals("北京市", regionDTO.getName());
+    }
 
 } 

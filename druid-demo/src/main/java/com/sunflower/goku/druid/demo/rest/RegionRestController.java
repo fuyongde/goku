@@ -17,11 +17,11 @@ import javax.annotation.Resource;
 @RequestMapping(value = "/api/regions")
 public class RegionRestController {
 
-  @Resource
-  private RegionMapper regionMapper;
+    @Resource
+    private RegionMapper regionMapper;
 
-  @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-  public Region getRegionById(@PathVariable("id") Integer id) {
-    return regionMapper.findById(id);
-  }
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Region getRegionById(@PathVariable("id") Integer id) {
+        return regionMapper.findById(id);
+    }
 }

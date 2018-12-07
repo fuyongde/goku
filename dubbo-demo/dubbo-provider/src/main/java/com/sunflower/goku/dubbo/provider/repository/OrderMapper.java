@@ -1,10 +1,10 @@
 package com.sunflower.goku.dubbo.provider.repository;
 
+import com.sunflower.goku.dubbo.provider.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-import com.sunflower.goku.dubbo.provider.entity.Order;
 
 @Mapper
 public interface OrderMapper {

@@ -1,9 +1,9 @@
 package com.sunflower.goku.dubbo.provider.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.goku.dubbo.commons.utils.BeanMapper;
 import com.sunflower.goku.dubbo.api.service.RegionService;
 import com.sunflower.goku.dubbo.api.service.dto.RegionDTO;
-import com.goku.dubbo.commons.utils.BeanMapper;
 import com.sunflower.goku.dubbo.provider.entity.Region;
 import com.sunflower.goku.dubbo.provider.repository.RegionMapper;
 
@@ -17,12 +17,13 @@ import javax.annotation.Resource;
 @Service
 public class RegionServiceImpl implements RegionService {
 
-  @Resource private RegionMapper regionMapper;
+    @Resource
+    private RegionMapper regionMapper;
 
-  @Override
-  public RegionDTO region(Integer id) {
-    Region region = regionMapper.findById(id);
-    RegionDTO regionDTO = BeanMapper.map(region, RegionDTO.class);
-    return regionDTO;
-  }
+    @Override
+    public RegionDTO region(Integer id) {
+        Region region = regionMapper.findById(id);
+        RegionDTO regionDTO = BeanMapper.map(region, RegionDTO.class);
+        return regionDTO;
+    }
 }

@@ -22,40 +22,40 @@ import java.io.File;
 @SpringBootTest
 public class EmailManagerTest {
 
-  @Autowired
-  private EmailManager emailManager;
+    @Autowired
+    private EmailManager emailManager;
 
-  @Before
-  public void before() throws Exception {
-  }
+    @Before
+    public void before() throws Exception {
+    }
 
-  @After
-  public void after() throws Exception {
-  }
+    @After
+    public void after() throws Exception {
+    }
 
-  /**
-   * Method: sendMail(String from, String to, String subject, String text)
-   */
-  @Test
-  public void testSendMail() throws Exception {
-    String to = "fuyongde@dafy.com";
-    String subject = "Goku变身";
-    String text = "自在极意功";
-    emailManager.sendMail(to, subject, text);
-  }
+    /**
+     * Method: sendMail(String from, String to, String subject, String text)
+     */
+    @Test
+    public void testSendMail() throws Exception {
+        String to = "fuyongde@dafy.com";
+        String subject = "Goku变身";
+        String text = "自在极意功";
+        emailManager.sendMail(to, subject, text);
+    }
 
-  /**
-   * Method: sendMail(String from, String to, String subject, String text)
-   */
-  @Test
-  public void testSendMailWithFiles() throws Exception {
-    String[] toArray = new String[]{"fuyongde@zhuifintech.com"};
-    String[] ccArray = new String[]{"fuyongde@foxmail.com"};
-    String subject = "Goku变身";
-    String text = "自在极意功";
-    File file = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "滴滴出行行程报销单滴滴出行行程报销单.pdf");
-    File chinestFile = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "滴滴出行行程报销单滴滴出行行程报销单.xlsx");
-    emailManager.sendMailWithFile(toArray, ccArray, subject, text, new File[] {file, chinestFile});
-  }
+    /**
+     * Method: sendMail(String from, String to, String subject, String text)
+     */
+    @Test
+    public void testSendMailWithFiles() throws Exception {
+        String[] toArray = new String[]{"fuyongde@zhuifintech.com"};
+        String[] ccArray = new String[]{"fuyongde@foxmail.com"};
+        String subject = "Goku变身";
+        String text = "自在极意功";
+        File file = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "滴滴出行行程报销单滴滴出行行程报销单.pdf");
+        File chinestFile = FileUtils.getFile("C:\\Users\\fuyongde\\Desktop", "滴滴出行行程报销单滴滴出行行程报销单.xlsx");
+        emailManager.sendMailWithFile(toArray, ccArray, subject, text, new File[]{file, chinestFile});
+    }
 
 } 

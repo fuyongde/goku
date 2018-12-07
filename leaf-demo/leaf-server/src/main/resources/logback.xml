@@ -5,7 +5,8 @@
 
   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]) %-5level [%X{hydraTraceId}] %logger{80}.%M:%line-%msg%n</pattern>
+      <pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]) %-5level [%X{hydraTraceId}] %logger{80}.%M:%line-%msg%n
+      </pattern>
     </encoder>
   </appender>
 
@@ -15,7 +16,8 @@
       <FileNamePattern>/opt/logs/letou/letou-leaf/letou-leaf.%d{yyyy-MM-dd}.log</FileNamePattern>
     </rollingPolicy>
     <encoder>
-      <pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]) %-5level [%X{hydraTraceId}] %logger{80}.%M:%line-%msg%n</pattern>
+      <pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]) %-5level [%X{hydraTraceId}] %logger{80}.%M:%line-%msg%n
+      </pattern>
     </encoder>
   </appender>
 

@@ -14,28 +14,28 @@ import java.io.IOException;
 @WebFilter(filterName = "dateFilter", urlPatterns = "/*")
 public class DateFilter implements Filter {
 
-  @Override
-  public void init(FilterConfig filterConfig) throws ServletException {
-
-  }
-
-  @Override
-  public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-
-    if (request instanceof HttpServletRequest) {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
 
     }
 
-    if (response instanceof HttpServletResponse) {
-      HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-      httpServletResponse.setHeader("NOW", String.valueOf(System.currentTimeMillis()));
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+
+        if (request instanceof HttpServletRequest) {
+
+        }
+
+        if (response instanceof HttpServletResponse) {
+            HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+            httpServletResponse.setHeader("NOW", String.valueOf(System.currentTimeMillis()));
+        }
+
+        chain.doFilter(request, response);
     }
 
-    chain.doFilter(request, response);
-  }
+    @Override
+    public void destroy() {
 
-  @Override
-  public void destroy() {
-
-  }
+    }
 }

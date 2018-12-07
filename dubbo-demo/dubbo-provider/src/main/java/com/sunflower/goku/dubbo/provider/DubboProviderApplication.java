@@ -12,9 +12,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class DubboProviderApplication {
 
-  public static void main(String[] args) {
-    SpringApplication springApplication = new SpringApplication(DubboProviderApplication.class);
-    springApplication.addListeners(new ApplicationPidFileWriter());
-    springApplication.run(args);
-  }
+    public static void main(String[] args) {
+        SpringApplication springApplication = new SpringApplication(DubboProviderApplication.class);
+        springApplication.addListeners(new ApplicationPidFileWriter());
+        springApplication.run(args);
+    }
 }

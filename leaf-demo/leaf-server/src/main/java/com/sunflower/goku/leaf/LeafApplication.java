@@ -21,6 +21,9 @@ import java.util.concurrent.CountDownLatch;
 @SpringBootApplication
 public class LeafApplication {
 
+    @Autowired
+    private LeafConfig leafConfig;
+
     public static void main(String[] args) throws InterruptedException {
         if (SystemUtils.IS_OS_WINDOWS || SystemUtils.IS_OS_MAC) {
             System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, "test");
@@ -35,9 +38,6 @@ public class LeafApplication {
         CountDownLatch closeLatch = ctx.getBean(CountDownLatch.class);
         closeLatch.await();
     }
-
-    @Autowired
-    private LeafConfig leafConfig;
 
     @Bean
     public SnowFlake snowFlake() {
