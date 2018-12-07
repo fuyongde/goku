@@ -4,9 +4,10 @@ import com.sunflower.goku.leaf.config.LeafConfig;
 import com.sunflower.goku.leaf.generator.SnowFlake;
 import org.apache.commons.lang3.SystemUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.system.ApplicationPidFileWriter;
+import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.AbstractEnvironment;
@@ -28,7 +29,7 @@ public class LeafApplication {
         ApplicationContext ctx = new SpringApplicationBuilder()
                 .listeners(new ApplicationPidFileWriter())
                 .sources(LeafApplication.class)
-                .web(false)
+                .web(WebApplicationType.NONE)
                 .run(args);
 
         CountDownLatch closeLatch = ctx.getBean(CountDownLatch.class);

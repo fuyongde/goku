@@ -12,5 +12,4 @@ public interface SequenceRpc {
 
     long nextLong();
 
-    void printConfig();
 }

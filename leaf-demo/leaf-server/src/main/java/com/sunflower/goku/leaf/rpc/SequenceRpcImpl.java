@@ -43,9 +43,4 @@ public class SequenceRpcImpl implements SequenceRpc {
         return result;
     }
 
-    @Override
-    public void printConfig() {
-        logger.info("{}", leafConfig);
-    }
-
 }
