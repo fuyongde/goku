@@ -1,8 +1,8 @@
-package com.sunflower.goku.dubbo.provider.service;
+package com.sunflower.goku.dubbo.provider.rpc;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
-import com.goku.dubbo.api.service.OrderService;
+import com.sunflower.goku.dubbo.api.service.OrderRpc;
 import com.sunflower.goku.dubbo.provider.entity.Order;
 import com.sunflower.goku.dubbo.provider.repository.OrderMapper;
 import com.sunflower.goku.leaf.api.SequenceRpc;
@@ -18,9 +18,9 @@ import javax.annotation.Resource;
  * @desc 订单服务
  */
 @Service
-public class OrderServiceImpl implements OrderService {
+public class OrderRpcImpl implements OrderRpc {
 
-    private static Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(OrderRpcImpl.class);
 
     @Resource
     private OrderMapper orderMapper;

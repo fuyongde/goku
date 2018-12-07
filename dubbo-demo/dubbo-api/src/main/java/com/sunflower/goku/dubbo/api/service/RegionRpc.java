@@ -5,7 +5,7 @@ import com.sunflower.goku.dubbo.api.service.dto.RegionDTO;
 /**
  * @author fuyongde
  */
-public interface RegionService {
+public interface RegionRpc {
 
     /**
      * 根据id查询地区信息

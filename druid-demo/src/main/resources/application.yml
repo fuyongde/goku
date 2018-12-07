@@ -5,7 +5,7 @@ spring:
     url: jdbc:mysql://localhost/quickstart?useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: JhBl3+wvbNItQh+SfeyCnlVSvQeRNtCtu1NtM8NeHxX91MPAYQHuXEe+yLDIh3hdfvAsdiZkZW9bBIcpHEU1xw==
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       filter:

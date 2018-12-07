@@ -1,13 +1,11 @@
 package com.sunflower.goku.dubbo.provider.manager;
 
+import com.sunflower.goku.dubbo.provider.DubboProviderApplicationTests;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
 
@@ -18,9 +16,7 @@ import java.io.File;
  * @version 1.0
  * @since <pre>11/09/2017</pre>
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class EmailManagerTest {
+public class EmailManagerTest extends DubboProviderApplicationTests {
 
     @Autowired
     private EmailManager emailManager;

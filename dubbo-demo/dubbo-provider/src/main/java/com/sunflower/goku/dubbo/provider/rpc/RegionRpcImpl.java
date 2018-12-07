@@ -1,8 +1,8 @@
-package com.sunflower.goku.dubbo.provider.service;
+package com.sunflower.goku.dubbo.provider.rpc;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.goku.dubbo.commons.utils.BeanMapper;
-import com.sunflower.goku.dubbo.api.service.RegionService;
+import com.sunflower.bulma.tools.BeanMapper;
+import com.sunflower.goku.dubbo.api.service.RegionRpc;
 import com.sunflower.goku.dubbo.api.service.dto.RegionDTO;
 import com.sunflower.goku.dubbo.provider.entity.Region;
 import com.sunflower.goku.dubbo.provider.repository.RegionMapper;
@@ -11,11 +11,11 @@ import javax.annotation.Resource;
 
 /**
  * @author fuyongde
- * @desc RegionService
+ * @desc RegionRpc
  * @date 2017/12/30 18:36
  */
 @Service
-public class RegionServiceImpl implements RegionService {
+public class RegionRpcImpl implements RegionRpc {
 
     @Resource
     private RegionMapper regionMapper;

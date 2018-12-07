@@ -1,6 +1,6 @@
 package com.sunflower.goku.dubbo.provider.manager;
 
-import com.goku.dubbo.commons.utils.EmailChecker;
+import com.sunflower.bulma.tools.EmailChecker;
 import com.sunflower.goku.dubbo.api.exception.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

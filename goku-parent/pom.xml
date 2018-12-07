@@ -92,8 +92,8 @@
       </dependency>
 
       <dependency>
-        <groupId>com.sunflower.bulma</groupId>
-        <artifactId>bulma-tools</artifactId>
+        <groupId>com.sunflower.goku</groupId>
+        <artifactId>dubbo-api</artifactId>
         <version>1.0.0-SNAPSHOT</version>
       </dependency>
 

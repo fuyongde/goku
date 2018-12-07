@@ -1,6 +1,6 @@
 package com.sunflower.goku.fastjson.demo;
 
-import org.junit.Test;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class FastjsonDemoApplicationTests {
 
-    @Test
+    @Before
     public void contextLoads() {
     }
 

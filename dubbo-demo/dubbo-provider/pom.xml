@@ -29,24 +29,7 @@
   </dependencyManagement>
 
   <dependencies>
-    <dependency>
-      <groupId>com.goku</groupId>
-      <artifactId>dubbo-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.goku</groupId>
-      <artifactId>goku-commons</artifactId>
-    </dependency>
 
-    <dependency>
-      <groupId>com.101tec</groupId>
-      <artifactId>zkclient</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.mybatis.spring.boot</groupId>
-      <artifactId>mybatis-spring-boot-starter</artifactId>
-    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -69,6 +52,12 @@
     <dependency>
       <groupId>com.alibaba.boot</groupId>
       <artifactId>dubbo-spring-boot-starter</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
@@ -77,8 +66,27 @@
     </dependency>
 
     <dependency>
+      <groupId>com.101tec</groupId>
+      <artifactId>zkclient</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sunflower.bulma</groupId>
+      <artifactId>bulma-tools</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>com.sunflower.goku</groupId>
       <artifactId>leaf-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sunflower.goku</groupId>
+      <artifactId>dubbo-api</artifactId>
     </dependency>
 
     <dependency>
