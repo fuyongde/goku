@@ -47,6 +47,7 @@
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
     <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+    <maaven-resource-plugin.version>3.1.0</maaven-resource-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -130,6 +131,13 @@
             <target>${java.version}</target>
             <encoding>${project.build.sourceEncoding}</encoding>
           </configuration>
+        </plugin>
+
+        <!-- 解决资源文件的编码问题 -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maaven-resource-plugin.version}</version>
         </plugin>
 
         <!-- 单元测试插件 -->
