@@ -18,7 +18,7 @@ public interface RegionMapper {
      * @param id 地区id
      * @return Region
      */
-    Region findById(@Param("id") Integer id);
+    Region getById(@Param("id") Long id);
 
     /**
      * 根据父级id查询子类信息
@@ -26,12 +26,12 @@ public interface RegionMapper {
      * @param parentId 地区id
      * @return Region
      */
-    List<Region> findByParentId(@Param("parentId") Integer parentId);
+    List<Region> getByParentId(@Param("parentId") Long parentId);
 
     /**
      * 查询所有地区信息
      *
      * @return Region
      */
-    List<Region> findAll();
+    List<Region> getAll();
 }

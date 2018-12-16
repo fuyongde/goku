@@ -1,7 +1,9 @@
 package com.sunflower.goku.dubbo.provider.manager;
 
+import com.google.common.base.Preconditions;
 import com.sunflower.bulma.tools.EmailChecker;
 import com.sunflower.goku.dubbo.api.exception.ServiceException;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +14,11 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-import org.springframework.util.Assert;
 
 import javax.activation.FileDataSource;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
+import java.util.Objects;
 
 /**
  * @author fuyongde
@@ -36,9 +38,9 @@ public class EmailManager {
 
     @Async
     public void sendMail(String to, String subject, String text) {
-        Assert.notNull(to, "Receiver is Null");
-        Assert.notNull(subject, "Subject is Null");
-        Assert.notNull(text, "Content is Null");
+        Preconditions.checkArgument(StringUtils.isBlank(to), "Receiver is Null");
+        Preconditions.checkArgument(StringUtils.isBlank(subject), "Subject is Null");
+        Preconditions.checkArgument(StringUtils.isBlank(text), "Content is Null");
         boolean isEmail = EmailChecker.isEmail(to);
         if (!isEmail) {
             throw new ServiceException(120001);
@@ -60,9 +62,9 @@ public class EmailManager {
 
     @Async
     public void sendMailWithFile(String[] toArray, String[] ccArray, String subject, String text, File[] files) {
-        Assert.notEmpty(toArray, "receiver is empty");
-        Assert.notNull(subject, "Subject is Null");
-        Assert.notNull(text, "Content is Null");
+        Preconditions.checkArgument(Objects.nonNull(toArray), "receiver is empty");
+        Preconditions.checkArgument(Objects.nonNull(subject), "Subject is Null");
+        Preconditions.checkArgument(Objects.nonNull(text), "Content is Null");
         try {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);

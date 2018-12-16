@@ -11,17 +11,17 @@ import java.io.Serializable;
  * @date 2017/10/30 18:42
  */
 public class RegionVO implements Serializable {
-    private Integer id;
+    private Long id;
     private Integer parentId;
     private String name;
     private Integer level;
     private Boolean leaf;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

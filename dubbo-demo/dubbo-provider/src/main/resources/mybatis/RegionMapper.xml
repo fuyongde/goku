@@ -3,8 +3,8 @@
 <mapper namespace="com.sunflower.goku.dubbo.provider.repository.RegionMapper">
 
   <resultMap id="RegionMap" type="com.sunflower.goku.dubbo.provider.entity.Region">
-    <id column="id" property="id" jdbcType="INTEGER"/>
-    <result column="parent_id" property="parentId" jdbcType="INTEGER"/>
+    <id column="id" property="id" jdbcType="BIGINT"/>
+    <result column="parent_id" property="parentId" jdbcType="BIGINT"/>
     <result column="name" property="name" jdbcType="VARCHAR"/>
     <result column="level" property="level" jdbcType="INTEGER"/>
     <result column="leaf" property="leaf" jdbcType="BIT"/>
@@ -14,21 +14,21 @@
     `id`, `parent_id`, `name`, `level`, `leaf`
   </sql>
 
-  <select id="findById" resultMap="RegionMap">
+  <select id="getById" resultMap="RegionMap">
     SELECT
     <include refid="Base_Column_List"/>
     FROM `region` r
     WHERE r.`id` = #{id}
   </select>
 
-  <select id="findByParentId" resultMap="RegionMap">
+  <select id="getByParentId" resultMap="RegionMap">
     SELECT
     <include refid="Base_Column_List"/>
     FROM `region` r
     WHERE r.`parent_id` = #{parentId}
   </select>
 
-  <select id="findAll" resultMap="RegionMap">
+  <select id="getAll" resultMap="RegionMap">
     SELECT
     <include refid="Base_Column_List"/>
     FROM `region` r

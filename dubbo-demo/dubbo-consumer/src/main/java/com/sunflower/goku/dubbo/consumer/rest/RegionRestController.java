@@ -2,8 +2,8 @@ package com.sunflower.goku.dubbo.consumer.rest;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.goku.dubbo.commons.utils.BeanMapper;
+import com.sunflower.goku.dubbo.api.rpc.dto.RegionDTO;
 import com.sunflower.goku.dubbo.api.service.RegionService;
-import com.sunflower.goku.dubbo.api.service.dto.RegionDTO;
 import com.sunflower.goku.dubbo.consumer.rest.vo.RegionVO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

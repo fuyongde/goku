@@ -1,6 +1,9 @@
-package com.sunflower.goku.dubbo.api.service.dto;
+package com.sunflower.goku.dubbo.api.rpc.dto;
+
+import com.alibaba.fastjson.JSON;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author fuyongde
@@ -8,17 +11,18 @@ import java.io.Serializable;
  * @date 2017/10/30 18:27
  */
 public class RegionDTO implements Serializable {
-    private Integer id;
+    private Long id;
     private Integer parentId;
     private String name;
     private Integer level;
     private Boolean leaf;
+    private List<RegionDTO> children;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -54,15 +58,16 @@ public class RegionDTO implements Serializable {
         this.leaf = leaf;
     }
 
+    public List<RegionDTO> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<RegionDTO> children) {
+        this.children = children;
+    }
+
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("RegionDTO{");
-        sb.append("id=").append(id);
-        sb.append(", parentId=").append(parentId);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", level=").append(level);
-        sb.append(", leaf=").append(leaf);
-        sb.append('}');
-        return sb.toString();
+        return JSON.toJSONString(this);
     }
 }

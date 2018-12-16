@@ -2,6 +2,7 @@ package com.sunflower.goku.dubbo.provider.entity;
 
 import com.alibaba.fastjson.JSON;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Date;
  * @date 2018/5/1 15:36
  * @desc 实体类的基类
  */
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Serializable {
     private Long id;
 
     private Boolean deleted;

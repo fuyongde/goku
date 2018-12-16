@@ -37,6 +37,7 @@ dubbo-demo/dubbo-provider/dubbo-provider.iml
 dubbo-demo/dubbo-provider/mvnw
 dubbo-demo/dubbo-provider/mvnw.cmd
 dubbo-demo/dubbo-provider/target
+dubbo-demo/dubbo-provider/logs
 
 dubbo-demo/dubbo-consumer/.mvn
 dubbo-demo/dubbo-consumer/dubbo-consumer.iml

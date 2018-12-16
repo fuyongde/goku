@@ -2,25 +2,14 @@ package com.sunflower.goku.dubbo.provider.entity;
 
 import com.alibaba.fastjson.JSON;
 
-import java.io.Serializable;
-
 /**
  * @author fuyongde
  */
-public class Region implements Serializable {
-    private Integer id;
+public class Region extends BaseEntity {
     private Integer parentId;
     private String name;
     private Integer level;
     private Boolean leaf;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Integer getParentId() {
         return parentId;

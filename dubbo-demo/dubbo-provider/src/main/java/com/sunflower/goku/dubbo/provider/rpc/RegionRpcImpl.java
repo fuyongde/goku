@@ -1,13 +1,10 @@
 package com.sunflower.goku.dubbo.provider.rpc;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.sunflower.bulma.tools.BeanMapper;
-import com.sunflower.goku.dubbo.api.service.RegionRpc;
-import com.sunflower.goku.dubbo.api.service.dto.RegionDTO;
-import com.sunflower.goku.dubbo.provider.entity.Region;
-import com.sunflower.goku.dubbo.provider.repository.RegionMapper;
-
-import javax.annotation.Resource;
+import com.sunflower.goku.dubbo.api.rpc.RegionRpc;
+import com.sunflower.goku.dubbo.api.rpc.dto.RegionDTO;
+import com.sunflower.goku.dubbo.provider.service.RegionService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author fuyongde
@@ -17,13 +14,11 @@ import javax.annotation.Resource;
 @Service
 public class RegionRpcImpl implements RegionRpc {
 
-    @Resource
-    private RegionMapper regionMapper;
+    @Autowired
+    private RegionService regionService;
 
     @Override
-    public RegionDTO region(Integer id) {
-        Region region = regionMapper.findById(id);
-        RegionDTO regionDTO = BeanMapper.map(region, RegionDTO.class);
-        return regionDTO;
+    public RegionDTO region(Long id) {
+        return regionService.getById(id);
     }
 }

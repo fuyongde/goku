@@ -1,6 +1,6 @@
-package com.sunflower.goku.dubbo.api.service;
+package com.sunflower.goku.dubbo.api.rpc;
 
-import com.sunflower.goku.dubbo.api.service.dto.RegionDTO;
+import com.sunflower.goku.dubbo.api.rpc.dto.RegionDTO;
 
 /**
  * @author fuyongde
@@ -13,5 +13,5 @@ public interface RegionRpc {
      * @param id
      * @return
      */
-    RegionDTO region(Integer id);
+    RegionDTO region(Long id);
 }

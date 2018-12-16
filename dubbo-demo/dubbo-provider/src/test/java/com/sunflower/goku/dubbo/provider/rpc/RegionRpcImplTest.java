@@ -1,8 +1,8 @@
-package com.sunflower.goku.dubbo.provider.service;
+package com.sunflower.goku.dubbo.provider.rpc;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.sunflower.goku.dubbo.api.service.RegionRpc;
-import com.sunflower.goku.dubbo.api.service.dto.RegionDTO;
+import com.sunflower.goku.dubbo.api.rpc.RegionRpc;
+import com.sunflower.goku.dubbo.api.rpc.dto.RegionDTO;
 import com.sunflower.goku.dubbo.provider.DubboProviderApplicationTests;
 import org.junit.Test;
 
@@ -25,7 +25,7 @@ public class RegionRpcImplTest extends DubboProviderApplicationTests {
      */
     @Test
     public void testRegion() throws Exception {
-        RegionDTO regionDTO = regionRpc.region(110000);
+        RegionDTO regionDTO = regionRpc.region(110000L);
         assertEquals("北京市", regionDTO.getName());
     }
 

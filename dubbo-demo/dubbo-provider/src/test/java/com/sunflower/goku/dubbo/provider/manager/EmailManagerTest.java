@@ -22,18 +22,18 @@ public class EmailManagerTest extends DubboProviderApplicationTests {
     private EmailManager emailManager;
 
     @Before
-    public void before() throws Exception {
+    public void before() {
     }
 
     @After
-    public void after() throws Exception {
+    public void after() {
     }
 
     /**
      * Method: sendMail(String from, String to, String subject, String text)
      */
     @Test
-    public void testSendMail() throws Exception {
+    public void testSendMail() {
         String to = "fuyongde@dafy.com";
         String subject = "Goku变身";
         String text = "自在极意功";

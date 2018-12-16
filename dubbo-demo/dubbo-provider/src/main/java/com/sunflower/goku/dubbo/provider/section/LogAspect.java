@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
+ * @author fuyonde
  * 日志系统
  */
 @Aspect
@@ -20,7 +21,7 @@ public class LogAspect {
 
     private final ThreadLocal<Long> startTime = new ThreadLocal<>();
 
-    @Pointcut(value = "execution(public * com.goku.dubbo.provider.service..*.*(..))")
+    @Pointcut(value = "execution(public * com.sunflower.goku.dubbo.provider.service..*.*(..))")
     public void serviceLog() {
     }
 
