@@ -4,6 +4,7 @@ package com.sunflower.goku.dubbo.consumer.rest.vo;
 import com.alibaba.fastjson.JSON;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author fuyongde
@@ -16,6 +17,7 @@ public class RegionVO implements Serializable {
     private String name;
     private Integer level;
     private Boolean leaf;
+    private List<RegionVO> children;
 
     public Long getId() {
         return id;
@@ -55,6 +57,14 @@ public class RegionVO implements Serializable {
 
     public void setLeaf(Boolean leaf) {
         this.leaf = leaf;
+    }
+
+    public List<RegionVO> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<RegionVO> children) {
+        this.children = children;
     }
 
     @Override

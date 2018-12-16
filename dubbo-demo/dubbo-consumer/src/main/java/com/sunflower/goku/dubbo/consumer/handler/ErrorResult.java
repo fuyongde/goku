@@ -1,7 +1,6 @@
 package com.sunflower.goku.dubbo.consumer.handler;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import com.alibaba.fastjson.JSON;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -81,7 +80,7 @@ public class ErrorResult<T> implements Serializable {
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+        return JSON.toJSONString(this);
     }
 }
 
