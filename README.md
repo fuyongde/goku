@@ -8,6 +8,12 @@
 
 `leaf-demo`：实现美团的leaf
 
+`apollo-demo`：Apollo配置中心（未完成）
+
+`tcc-demo`：TCC事务（未完成）
+
+`xxl-job-demo`: xxl-job定时任务（未完成）
+
 阿里Maven地址  
 ```
 <mirror>
