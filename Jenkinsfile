@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  options {
-    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '5')
-  }
   stages {
     stage('Build') {
       tools {
@@ -14,5 +11,27 @@ pipeline {
         sh 'mvn clean install -f goku-parent/pom.xml -Dmaven.test.skip=true'
       }
     }
+    stage('DelpoyDev') {
+      parallel {
+        stage('DelpoyDev') {
+          steps {
+            sh 'sh \'scp fastjson-demo/target/fastjson-demo.jar root@47.107.97.138:/opt/upload\''
+          }
+        }
+        stage('DeployTest') {
+          steps {
+            sh 'sh \'scp fastjson-demo/target/fastjson-demo.jar root@47.107.97.138:/opt/upload\''
+          }
+        }
+      }
+    }
+    stage('restart') {
+      steps {
+        sh 'sh \'scp fastjson-demo/target/fastjson-demo.jar root@47.107.97.138:/opt/upload\''
+      }
+    }
+  }
+  options {
+    buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '5'))
   }
 }
