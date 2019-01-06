@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  options {
+    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '5')
+  }
   stages {
     stage('Build') {
       tools {
