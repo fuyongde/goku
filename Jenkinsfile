@@ -13,7 +13,7 @@ pipeline {
     }
     stage('DelpoyDev') {
       steps {
-        sh 'sh \'scp fastjson-demo/target/fastjson-demo.jar root@47.107.97.138:/opt/upload\''
+        sh 'scp fastjson-demo/target/fastjson-demo.jar root@47.107.97.138:/opt/upload'
       }
     }
     stage('Hello') {
@@ -32,7 +32,7 @@ pipeline {
     }
     stage('restart') {
       steps {
-        sh 'sh \'scp fastjson-demo/target/fastjson-demo.jar root@47.107.97.138:/opt/upload\''
+        echo 'restart'
       }
     }
   }
