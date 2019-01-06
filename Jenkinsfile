@@ -2,8 +2,13 @@ pipeline {
   agent any
   stages {
     stage('Build') {
+      tools {
+        maven 'maven'
+        jdk 'JDK8'
+      }
       steps {
-        sh 'mvn clean install'
+        echo 'Building...'
+        sh 'mvn clean install -f goku-parent/pom.xml'
       }
     }
   }

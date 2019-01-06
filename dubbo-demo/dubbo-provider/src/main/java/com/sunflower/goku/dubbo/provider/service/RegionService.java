@@ -47,9 +47,8 @@ public class RegionService implements InitializingBean {
     }
 
     public List<Region> getByParent(Long parentId) {
-        List<Region> regions = null;
         try {
-            regions = REGION_LIST_CACHE.get(parentId, () -> regionMapper.getByParentId(parentId));
+            List<Region> regions = REGION_LIST_CACHE.get(parentId, () -> regionMapper.getByParentId(parentId));
             return regions;
         } catch (ExecutionException e) {
             throw new ServiceException(10000, "根据父级获取数据失败" + parentId);
