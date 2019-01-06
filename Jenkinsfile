@@ -8,7 +8,7 @@ pipeline {
       }
       steps {
         echo 'Building...'
-        sh 'mvn clean install -f goku-parent/pom.xml'
+        sh 'mvn clean install -f goku-parent/pom.xml -Dmaven.test.skip=true'
       }
     }
   }
