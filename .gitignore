@@ -26,12 +26,6 @@ dubbo-demo/dubbo-api/mvnw
 dubbo-demo/dubbo-api/mvnw.cmd
 dubbo-demo/dubbo-api/target
 
-goku-commons/.mvn
-goku-commons/goku-commons.iml
-goku-commons/mvnw
-goku-commons/mvnw.cmd
-goku-commons/target
-
 dubbo-demo/dubbo-provider/.mvn
 dubbo-demo/dubbo-provider/dubbo-provider.iml
 dubbo-demo/dubbo-provider/mvnw
@@ -50,5 +44,11 @@ fastjson-demo/fastjson-demo.iml
 fastjson-demo/mvnw
 fastjson-demo/mvnw.cmd
 fastjson-demo/target
+
+webflux-demo/.mvn
+webflux-demo/webflux-demo.iml
+webflux-demo/mvnw
+webflux-demo/mvnw.cmd
+webflux-demo/target
 
 logs

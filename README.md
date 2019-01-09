@@ -1,18 +1,20 @@
 # goku
 
-国内一些开源技术在Springboot中的应用
+一些开源技术在Springboot中的应用
 
-`druid-demo`：druid数据源
+`druid-demo`：演示`druid`接入Springboot
 
-`dubbo-demo`：RPC框架Dubbo
+`dubbo-demo`：演示RPC框架`Dubbo`接入Springboot
 
-`leaf-demo`：实现美团的leaf
+`leaf-demo`：实现美团的`leaf`
 
-`apollo-demo`：Apollo配置中心（未完成）
+`apollo-demo`：演示`Apollo`配置中心接入Springboot（未完成）
 
 `tcc-demo`：TCC事务（未完成）
 
 `xxl-job-demo`: xxl-job定时任务（未完成）
+
+`Webflux-demo`: `webflux`示例
 
 阿里Maven地址  
 ```
