@@ -6,14 +6,12 @@
 
   <parent>
     <groupId>com.sunflower.goku</groupId>
-    <artifactId>dubbo-demo</artifactId>
+    <artifactId>atomikos-demo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>dubbo-provider</artifactId>
+  <artifactId>zhifubao-server</artifactId>
   <packaging>jar</packaging>
-
-  <name>dubbo-provider</name>
   <description>Demo project for Spring Boot</description>
 
   <dependencyManagement>
@@ -32,15 +30,19 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-mail</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-aop</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-activemq</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jta-atomikos</artifactId>
     </dependency>
 
     <dependency>
@@ -50,8 +52,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.1</version>
     </dependency>
 
     <dependency>
@@ -76,11 +79,6 @@
     </dependency>
 
     <dependency>
-      <groupId>com.101tec</groupId>
-      <artifactId>zkclient</artifactId>
-    </dependency>
-
-    <dependency>
       <groupId>org.mybatis.spring.boot</groupId>
       <artifactId>mybatis-spring-boot-starter</artifactId>
     </dependency>
@@ -92,11 +90,7 @@
 
     <dependency>
       <groupId>com.sunflower.goku</groupId>
-      <artifactId>leaf-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.sunflower.goku</groupId>
-      <artifactId>dubbo-api</artifactId>
+      <artifactId>common-api</artifactId>
     </dependency>
 
     <dependency>
@@ -107,7 +101,7 @@
   </dependencies>
 
   <build>
-    <finalName>dubbo-provider</finalName>
+    <finalName>zhifubao-server</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

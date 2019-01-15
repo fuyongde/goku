@@ -1,0 +1,7 @@
+@ip=localhost
+@port=8082
+
+### 获取余额
+GET http://{{ip}}:{{port}}//api/wallet/1 HTTP/1.1
+
+### 交易

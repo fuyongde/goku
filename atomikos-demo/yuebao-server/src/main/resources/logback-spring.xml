@@ -11,9 +11,9 @@
   </appender>
 
   <appender name="infoFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>logs/dobbo-provider.log</file>
+    <file>logs/dobbo-consumer.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>logs/dobbo-provider.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>logs/dobbo-consumer.%d{yyyy-MM-dd}.log</fileNamePattern>
     </rollingPolicy>
     <encoder>
       <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -26,9 +26,9 @@
   </appender>
 
   <appender name="errorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>logs/dobbo-provider_error.log</file>
+    <file>logs/dobbo-consumer_error.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>logs/dobbo-provider_error.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>logs/dobbo-consumer_error.%d{yyyy-MM-dd}.log</fileNamePattern>
     </rollingPolicy>
     <encoder>
       <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -40,19 +40,11 @@
     </filter>
   </appender>
 
-  <logger name="com.sunflower.goku.dubbo.provider" level="ERROR">
+  <logger name="com.goku.dubbo.consumer" level="ERROR">
     <appender-ref ref="errorFile"/>
   </logger>
 
-  <logger name="com.sunflower.goku.dubbo.provider" level="INFO">
-    <appender-ref ref="infoFile"/>
-  </logger>
-
-  <logger name="com.alibaba.dubbo" level="INFO">
-    <appender-ref ref="infoFile"/>
-  </logger>
-
-  <logger name="com.sunflower.goku.dubbo.provider.repository" level="DEBUG">
+  <logger name="com.goku.dubbo.consumer" level="INFO">
     <appender-ref ref="infoFile"/>
   </logger>
 

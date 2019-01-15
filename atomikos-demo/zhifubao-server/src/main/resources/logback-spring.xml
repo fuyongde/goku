@@ -11,7 +11,7 @@
   </appender>
 
   <appender name="infoFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>logs/dobbo-provider.log</file>
+    <file>logs/zhifubao-server.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <fileNamePattern>logs/dobbo-provider.%d{yyyy-MM-dd}.log</fileNamePattern>
     </rollingPolicy>
@@ -26,7 +26,7 @@
   </appender>
 
   <appender name="errorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>logs/dobbo-provider_error.log</file>
+    <file>logs/zhifubao-server-error.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <fileNamePattern>logs/dobbo-provider_error.%d{yyyy-MM-dd}.log</fileNamePattern>
     </rollingPolicy>
@@ -40,11 +40,11 @@
     </filter>
   </appender>
 
-  <logger name="com.sunflower.goku.dubbo.provider" level="ERROR">
+  <logger name="com.sunflower.goku.zhifubao" level="ERROR">
     <appender-ref ref="errorFile"/>
   </logger>
 
-  <logger name="com.sunflower.goku.dubbo.provider" level="INFO">
+  <logger name="com.sunflower.goku.zhifubao" level="INFO">
     <appender-ref ref="infoFile"/>
   </logger>
 
@@ -52,7 +52,7 @@
     <appender-ref ref="infoFile"/>
   </logger>
 
-  <logger name="com.sunflower.goku.dubbo.provider.repository" level="DEBUG">
+  <logger name="com.sunflower.goku.zhifubao.repository" level="DEBUG">
     <appender-ref ref="infoFile"/>
   </logger>
 

@@ -40,11 +40,11 @@
     </filter>
   </appender>
 
-  <logger name="com.goku.dubbo.consumer" level="ERROR">
+  <logger name="com.sunflower.goku.dubbo.consumer" level="ERROR">
     <appender-ref ref="errorFile"/>
   </logger>
 
-  <logger name="com.goku.dubbo.consumer" level="INFO">
+  <logger name="com.sunflower.goku.dubbo.consumer" level="INFO">
     <appender-ref ref="infoFile"/>
   </logger>
 

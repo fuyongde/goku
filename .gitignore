@@ -51,4 +51,22 @@ webflux-demo/mvnw
 webflux-demo/mvnw.cmd
 webflux-demo/target
 
+atomikos-demo/common-api/.mvn
+atomikos-demo/common-api/*.iml
+atomikos-demo/common-api/mvnw
+atomikos-demo/common-api/mvnw.cmd
+atomikos-demo/common-api/target
+
+atomikos-demo/yuebao-server/.mvn
+atomikos-demo/yuebao-server/*.iml
+atomikos-demo/yuebao-server/mvnw
+atomikos-demo/yuebao-server/mvnw.cmd
+atomikos-demo/yuebao-server/target
+
+atomikos-demo/zhifubao-server/.mvn
+atomikos-demo/zhifubao-server/*.iml
+atomikos-demo/zhifubao-server/mvnw
+atomikos-demo/zhifubao-server/mvnw.cmd
+atomikos-demo/zhifubao-server/target
+
 logs
