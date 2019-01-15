@@ -10,11 +10,15 @@
 
 `apollo-demo`：演示`Apollo`配置中心接入Springboot（未完成）
 
-`tcc-demo`：TCC事务（未完成）
-
 `xxl-job-demo`: xxl-job定时任务（未完成）
 
-`Webflux-demo`: `webflux`示例
+`webflux-demo`: `webflux`示例
+
+`atomikos-demo`: 分布式事务-基于可靠消息的最终一致性方案，`JTA`采用`atomikos`
+
+`tcc-demo`：分布式事务-TCC（未完成）
+
+`fescar-demo`: 分布式事务-基于阿里巴巴`fescar`
 
 阿里Maven地址  
 ```
