@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,16 +20,11 @@ public class TradeProducer {
     private static Logger logger = LoggerFactory.getLogger(TradeProducer.class);
 
     @Autowired
-    private JmsMessagingTemplate jmsMessagingTemplate;
+    private JmsTemplate jmsTemplate;
 
     public void tradeOut(TradeMessage tradeMessage) {
         logger.info("tradeMessage:{}", tradeMessage);
-        jmsMessagingTemplate.convertAndSend(Queue.ZHIFUBAO_YUEBAO_TRADE, tradeMessage);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        jmsTemplate.convertAndSend(Queue.ZHIFUBAO_YUEBAO_TRADE, tradeMessage);
         logger.info("send mq end");
     }
 }
