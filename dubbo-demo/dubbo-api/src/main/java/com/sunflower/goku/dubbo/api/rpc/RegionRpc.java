@@ -14,4 +14,6 @@ public interface RegionRpc {
      * @return
      */
     RegionDTO region(Long id);
+
+    void keepNetty(long duration);
 }

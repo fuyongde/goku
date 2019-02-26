@@ -26,5 +26,6 @@ public class TradeProducer {
         logger.info("tradeMessage:{}", tradeMessage);
         jmsTemplate.convertAndSend(Queue.ZHIFUBAO_YUEBAO_TRADE, tradeMessage);
         logger.info("send mq end");
+        throw new RuntimeException("a");
     }
 }

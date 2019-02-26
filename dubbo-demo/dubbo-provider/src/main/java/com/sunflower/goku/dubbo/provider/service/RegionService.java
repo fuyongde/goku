@@ -40,8 +40,24 @@ public class RegionService implements InitializingBean {
                 List<RegionDTO> regionDTOS = BeanMapper.mapList(regions, RegionDTO.class);
                 regionDTO.setChildren(regionDTOS);
             }
+            logger.info("第1次sleep");
+            Thread.sleep(5000L);
+
+            regionMapper.getById(id);
+            logger.info("第2次sleep");
+            Thread.sleep(5000L);
+
+            regionMapper.getById(id);
+            logger.info("第3次sleep");
+            Thread.sleep(5000L);
+
             return regionDTO;
-        } catch (ExecutionException e) {
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            logger.error(e.getMessage());
+
             throw new ServiceException(10000, "根据id获取数据失败" + id);
         }
     }

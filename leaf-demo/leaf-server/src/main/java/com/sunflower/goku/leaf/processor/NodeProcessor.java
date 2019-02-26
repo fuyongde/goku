@@ -1,6 +1,5 @@
 package com.sunflower.goku.leaf.processor;
 
-import com.alibaba.dubbo.common.utils.NetUtils;
 import com.sunflower.goku.leaf.config.LeafConfig;
 import com.sunflower.goku.leaf.generator.SnowFlake;
 import org.I0Itec.zkclient.ZkClient;
@@ -86,7 +85,7 @@ public class NodeProcessor {
 
     @PostConstruct
     public void init() {
-        String ip = NetUtils.getLocalHost();
+        String ip = "";
         int dubboPort = getDubboPort();
         String zkAddress = leafConfig.getZkAddress();
 

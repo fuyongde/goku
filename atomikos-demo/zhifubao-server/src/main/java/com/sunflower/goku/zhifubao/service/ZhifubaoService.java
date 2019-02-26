@@ -32,12 +32,7 @@ public class ZhifubaoService {
         Wallet wallet = walletMapper.getByUserId4Update(userId);
         long balance = wallet.getBalance();
         balance -= amount;
-        tradeProducer.tradeOut(new TradeMessage(userId, amount));
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         walletMapper.updateBalance(userId, balance);
+        tradeProducer.tradeOut(new TradeMessage(userId, amount));
     }
 }
