@@ -1,9 +1,10 @@
 package com.sunflower.goku.dubbo.provider.rpc;
 
-import com.alibaba.dubbo.config.annotation.Service;
+import com.sunflower.goku.dubbo.api.CommonResponse;
 import com.sunflower.goku.dubbo.api.rpc.RegionRpc;
 import com.sunflower.goku.dubbo.api.rpc.dto.RegionDTO;
 import com.sunflower.goku.dubbo.provider.service.RegionService;
+import org.apache.dubbo.config.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class RegionRpcImpl implements RegionRpc {
     private RegionService regionService;
 
     @Override
-    public RegionDTO region(Long id) {
-        return regionService.getById(id);
+    public CommonResponse<RegionDTO> region(Long id) {
+        return new CommonResponse(regionService.getById(id));
     }
 
     @Override

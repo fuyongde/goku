@@ -1,6 +1,8 @@
 package com.sunflower.goku.dubbo.consumer.handler;
 
 import com.sunflower.goku.dubbo.api.exception.ServiceException;
+import org.apache.dubbo.rpc.Result;
+import org.apache.dubbo.rpc.RpcResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -38,12 +40,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         errorResult.setException(ServiceException.class.getName());
         errorResult.setMessage(ex.getMessage());
         errorResult.setPath(request.getContextPath());
-
         if (request.getNativeRequest() instanceof HttpServletRequest) {
             HttpServletRequest req = (HttpServletRequest) request.getNativeRequest();
             errorResult.setPath(req.getServletPath());
             logger.error("Access Error : {}, Error Message", req.getRequestURI(), ex.getMessage());
         }
+
+        logger.error("e:{}", ex);
 
         return handleExceptionInternal(ex, errorResult, headers, HttpStatus.INTERNAL_SERVER_ERROR, request);
     }

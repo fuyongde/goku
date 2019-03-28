@@ -1,5 +1,6 @@
 package com.sunflower.goku.dubbo.api.rpc;
 
+import com.sunflower.goku.dubbo.api.CommonResponse;
 import com.sunflower.goku.dubbo.api.rpc.dto.RegionDTO;
 
 /**
@@ -13,7 +14,7 @@ public interface RegionRpc {
      * @param id
      * @return
      */
-    RegionDTO region(Long id);
+    CommonResponse<RegionDTO> region(Long id);
 
     void keepNetty(long duration);
 }

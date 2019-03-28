@@ -25,7 +25,7 @@ public class RegionRpcImplTest extends DubboProviderApplicationTests {
      */
     @Test
     public void testRegion() throws Exception {
-        RegionDTO regionDTO = regionRpc.region(110000L);
+        RegionDTO regionDTO = (RegionDTO) regionRpc.region(110000L).getValue();
         assertEquals("北京市", regionDTO.getName());
     }
 

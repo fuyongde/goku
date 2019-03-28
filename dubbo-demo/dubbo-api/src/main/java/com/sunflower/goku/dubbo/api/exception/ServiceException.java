@@ -40,6 +40,10 @@ public class ServiceException extends RuntimeException {
         this.errorCode = errorCode;
     }
 
+    public ServiceException(Throwable cause) {
+        super(cause);
+    }
+
     public int getErrorCode() {
         return errorCode;
     }

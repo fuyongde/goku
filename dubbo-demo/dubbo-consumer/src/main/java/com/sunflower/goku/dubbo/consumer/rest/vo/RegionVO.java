@@ -1,6 +1,5 @@
 package com.sunflower.goku.dubbo.consumer.rest.vo;
 
-
 import com.alibaba.fastjson.JSON;
 
 import java.io.Serializable;

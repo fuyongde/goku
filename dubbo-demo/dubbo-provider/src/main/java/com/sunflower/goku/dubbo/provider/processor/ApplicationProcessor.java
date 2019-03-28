@@ -1,8 +1,5 @@
 package com.sunflower.goku.dubbo.provider.processor;
 
-import com.alibaba.dubbo.config.ProtocolConfig;
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.sunflower.goku.dubbo.api.rpc.RegionRpc;
 import com.sunflower.goku.dubbo.provider.repository.ShutdownMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +29,6 @@ public class ApplicationProcessor {
 
     @PreDestroy
     public void keepNetty() {
-        ProtocolConfig.destroyAll();
     }
 
 }

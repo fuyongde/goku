@@ -6,7 +6,7 @@
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+      <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{80} - %msg%n</pattern>
     </encoder>
   </appender>
 
@@ -16,7 +16,7 @@
       <fileNamePattern>logs/dobbo-consumer.%d{yyyy-MM-dd}.log</fileNamePattern>
     </rollingPolicy>
     <encoder>
-      <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+      <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{80} - %msg%n</pattern>
     </encoder>
     <filter class="ch.qos.logback.classic.filter.LevelFilter">
       <level>INFO</level>
@@ -31,7 +31,7 @@
       <fileNamePattern>logs/dobbo-consumer_error.%d{yyyy-MM-dd}.log</fileNamePattern>
     </rollingPolicy>
     <encoder>
-      <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+      <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{80} - %msg%n</pattern>
     </encoder>
     <filter class="ch.qos.logback.classic.filter.LevelFilter">
       <level>ERROR</level>

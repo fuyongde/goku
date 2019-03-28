@@ -1,10 +1,12 @@
 package com.sunflower.goku.dubbo.consumer.rest;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.sunflower.bulma.tools.BeanMapper;
+import com.sunflower.goku.dubbo.api.CommonResponse;
+import com.sunflower.goku.dubbo.api.exception.ServiceException;
 import com.sunflower.goku.dubbo.api.rpc.RegionRpc;
 import com.sunflower.goku.dubbo.api.rpc.dto.RegionDTO;
 import com.sunflower.goku.dubbo.consumer.rest.vo.RegionVO;
+import org.apache.dubbo.config.annotation.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,15 +23,17 @@ public class RegionRestController {
 
     private static Logger logger = LoggerFactory.getLogger(RegionRestController.class);
 
-    @Reference(timeout = 20000)
+    @Reference(timeout = 300000)
     private RegionRpc regionRpc;
 
     @GetMapping(value = "/{id}")
-    public RegionVO region(@PathVariable Long id) {
-        logger.info("获取区域信息");
-        RegionDTO regionDTO = regionRpc.region(id);
-        logger.info("获取区域信息成功");
-        RegionVO regionVO = BeanMapper.map(regionDTO, RegionVO.class);
-        return regionVO;
+    public CommonResponse<RegionVO> region(@PathVariable Long id) {
+        CommonResponse<RegionDTO> commonResponse = regionRpc.region(id);
+        if (commonResponse.isSuccess()) {
+            RegionVO regionVO = BeanMapper.map(commonResponse.getValue(), RegionVO.class);
+            return new CommonResponse<>(regionVO);
+        } else {
+            throw new ServiceException(commonResponse.getThrowable());
+        }
     }
 }
