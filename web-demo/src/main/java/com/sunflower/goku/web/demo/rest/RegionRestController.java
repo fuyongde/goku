@@ -1,14 +1,14 @@
 package com.sunflower.goku.web.demo.rest;
 
+import com.google.common.collect.Maps;
+import com.sunflower.goku.web.demo.annotation.Auth;
 import com.sunflower.goku.web.demo.entity.Region;
 import com.sunflower.goku.web.demo.repository.RegionMapper;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * @author fuyongde
@@ -23,5 +23,13 @@ public class RegionRestController {
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Region getRegionById(@PathVariable("id") Integer id) {
         return regionMapper.findById(id);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    @Auth(hasAnyPermission = {"0"})
+    public Map<String, Object> deleteRegionById(@PathVariable("id") Integer id) {
+        Map<String, Object> result = Maps.newHashMap();
+        result.put("success", true);
+        return result;
     }
 }
