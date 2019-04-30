@@ -21,3 +21,4 @@ publickey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJMVwW59Xozo7XkEJIelIPjHUjwYwxYc6ZJVu
 
 mybatis:
   config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mybatis/*.xml

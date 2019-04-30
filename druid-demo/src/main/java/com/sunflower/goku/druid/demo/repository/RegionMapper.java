@@ -9,7 +9,6 @@ import java.util.List;
 /**
  * @author fuyongde
  */
-@Mapper
 public interface RegionMapper {
 
     /**
