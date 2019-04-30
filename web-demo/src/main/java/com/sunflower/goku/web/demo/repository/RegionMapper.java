@@ -1,6 +1,6 @@
-package com.sunflower.goku.druid.demo.repository;
+package com.sunflower.goku.web.demo.repository;
 
-import com.sunflower.goku.druid.demo.entity.Region;
+import com.sunflower.goku.web.demo.entity.Region;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

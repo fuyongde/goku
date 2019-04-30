@@ -17,6 +17,7 @@
     <module>../leaf-demo</module>
     <module>../webflux-demo</module>
     <module>../atomikos-demo</module>
+    <module>../web-demo</module>
   </modules>
 
   <properties>
@@ -24,19 +25,19 @@
 
     <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
 
-    <druid-spring-boot-starter.version>1.1.9</druid-spring-boot-starter.version>
+    <druid-spring-boot-starter.version>1.1.16</druid-spring-boot-starter.version>
     <dubbo-spring-boot-starter.version>0.2.0</dubbo-spring-boot-starter.version>
-    <fastjson.version>1.2.47</fastjson.version>
+    <fastjson.version>1.2.57</fastjson.version>
     <p3c-pmd.version>1.3.6</p3c-pmd.version>
 
-    <mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
+    <mybatis-spring-boot-starter.version>2.0.1</mybatis-spring-boot-starter.version>
 
     <zkclient.version>0.2</zkclient.version>
     <commons-text.version>1.3</commons-text.version>
     <commons-io.version>2.6</commons-io.version>
     <poi-ooxml.version>3.17</poi-ooxml.version>
     <dozer.version>5.5.1</dozer.version>
-    <guava.version>22.0</guava.version>
+    <guava.version>27.0-jre</guava.version>
     <junit.version>4.12</junit.version>
     <pinyin4j.version>2.5.1</pinyin4j.version>
     <slf4j-log4j12.version>1.7.5</slf4j-log4j12.version>
@@ -81,6 +82,12 @@
         <groupId>com.alibaba</groupId>
         <artifactId>fastjson</artifactId>
         <version>${fastjson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
       </dependency>
 
       <dependency>
