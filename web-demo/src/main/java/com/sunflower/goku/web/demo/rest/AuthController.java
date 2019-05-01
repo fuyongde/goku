@@ -1,7 +1,6 @@
 package com.sunflower.goku.web.demo.rest;
 
 import com.google.common.collect.Maps;
-import com.sunflower.goku.web.demo.annotation.Auth;
 import com.sunflower.goku.web.demo.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
