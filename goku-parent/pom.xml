@@ -16,6 +16,7 @@
     <module>../fastjson-demo</module>
     <module>../leaf-demo</module>
     <module>../webflux-demo</module>
+    <module>../spring-cloud-gateway-demo</module>
     <module>../atomikos-demo</module>
     <module>../web-demo</module>
   </modules>
@@ -23,7 +24,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
+    <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
 
     <druid-spring-boot-starter.version>1.1.16</druid-spring-boot-starter.version>
     <dubbo-spring-boot-starter.version>0.2.0</dubbo-spring-boot-starter.version>
