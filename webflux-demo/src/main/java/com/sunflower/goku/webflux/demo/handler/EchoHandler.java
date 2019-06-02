@@ -7,6 +7,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 /**
  * @author fuyongde
  * @date 2019-01-09 22:24
@@ -15,7 +17,11 @@ import reactor.core.publisher.Mono;
 @Component
 public class EchoHandler {
 
-    public Mono<ServerResponse> echo(ServerRequest serverRequest) {
-        return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN).body(BodyInserters.fromObject("Hello"));
+    public Mono<ServerResponse> echo(ServerRequest request) {
+        Long delay = request.queryParam("delay").map(Long::parseLong).get();
+        return ServerResponse.ok()
+                .contentType(MediaType.TEXT_PLAIN)
+                .body(BodyInserters.fromObject("Hello World"))
+                .delayElement(Duration.ofMillis(delay));
     }
 }
