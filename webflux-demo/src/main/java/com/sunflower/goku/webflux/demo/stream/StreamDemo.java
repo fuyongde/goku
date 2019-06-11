@@ -45,4 +45,41 @@ public class StreamDemo {
                 .parallel();
         System.out.println(stream.count());
     }
+
+    /**
+     * 演示Stream延时性，即没有终止操作，则不执行之前的衔接操作
+     */
+    public void method3() {
+        // 没有终止操作，则不会执行之前的逻辑，下面这段代码中filter里面的逻辑是不会执行的
+        Stream.of("a", "b", "c")
+                .filter(s -> {
+                    System.out.println("filter -> " + s);
+                    return true;
+                });
+
+        System.out.println("-----");
+
+        // 有终止操作forEach，则会执行filter里面的逻辑，并且可以观察顺序是执行完单个元素的filter操作，则会继续执行该元素的forEach操作
+        // 而不是执行完所有元素的filter，再去执行forEach操作
+        Stream.of("x", "y", "z")
+                .filter(s -> {
+                    System.out.println("filter -> " + s);
+                    return true;
+                })
+                .forEach(System.out::println);
+
+        System.out.println("-----");
+
+        // 有终止操作forEach，则会执行filter里面的逻辑，在遇到anyMatch操作时，若匹配到一个元素，则后续的元素的操作不会执行
+        Stream.of("x", "y", "z")
+                .map(s -> {
+                    System.out.println("map -> " + s);
+                    return s.toUpperCase();
+                })
+                .anyMatch(s -> {
+                    System.out.println("anyMatch -> " + s);
+                    return s.startsWith("X");
+                })
+        ;
+    }
 }

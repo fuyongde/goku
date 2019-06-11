@@ -30,4 +30,9 @@ public class StreamDemoTest {
     public void method2() {
         streamDemo.method2();
     }
+
+    @Test
+    public void method3() {
+        streamDemo.method3();
+    }
 }
