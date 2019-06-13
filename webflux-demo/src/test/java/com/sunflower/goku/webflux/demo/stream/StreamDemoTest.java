@@ -1,5 +1,6 @@
 package com.sunflower.goku.webflux.demo.stream;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,5 +35,25 @@ public class StreamDemoTest {
     @Test
     public void method3() {
         streamDemo.method3();
+    }
+
+    @Test
+    public void method4() throws JsonProcessingException {
+        streamDemo.method4();
+    }
+
+    @Test
+    public void method5() {
+        streamDemo.method5();
+    }
+
+    @Test
+    public void method6() {
+        streamDemo.method6();
+    }
+
+    @Test
+    public void method7() {
+        streamDemo.method7();
     }
 }
