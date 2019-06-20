@@ -53,6 +53,32 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>jib-maven-plugin</artifactId>
+        <configuration>
+          <from>
+            <image>openjdk:8u212-jdk</image>
+          </from>
+          <to>
+            <image>registry.cn-hangzhou.aliyuncs.com/fuyongde/fastjson-demo</image>
+          </to>
+          <container>
+            <jvmFlags>
+              <jvmFlag>-Xms128m</jvmFlag>
+              <jvmFlag>-Xmx128m</jvmFlag>
+            </jvmFlags>
+          </container>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>build</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
