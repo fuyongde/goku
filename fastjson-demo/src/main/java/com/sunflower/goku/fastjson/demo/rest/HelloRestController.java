@@ -1,6 +1,11 @@
 package com.sunflower.goku.fastjson.demo.rest;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,37 +15,26 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/api/hello")
+@Slf4j
 public class HelloRestController {
 
     @GetMapping
-    Hello hello() {
+    public Hello hello() {
+        log.info("hello");
         return new Hello(1, "Hello");
     }
 }
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 class Hello {
     @JSONField(serialize = false)
     Integer id;
     String name;
 
-    public Hello(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
     }
 }
