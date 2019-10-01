@@ -6,9 +6,9 @@ import com.sunflower.goku.yuebao.service.dto.YuebaoTradeDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 
 /**
  * @author fuyongde
@@ -23,7 +23,7 @@ public class YuebaoService {
     @Resource
     private WalletMapper walletMapper;
 
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional
     public void tradeIn(YuebaoTradeDTO yuebaoTradeDTO) {
         long userId = yuebaoTradeDTO.getUserId();
         long amount = yuebaoTradeDTO.getAmount();

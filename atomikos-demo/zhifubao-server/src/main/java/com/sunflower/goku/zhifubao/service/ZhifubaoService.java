@@ -7,9 +7,9 @@ import com.sunflower.goku.zhifubao.repository.WalletMapper;
 import com.sunflower.goku.zhifubao.service.dto.ZhifubaoTradeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 
 /**
  * @author fuyongde
@@ -25,7 +25,7 @@ public class ZhifubaoService {
     @Autowired
     private TradeProducer tradeProducer;
 
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional
     public void tradeOut(ZhifubaoTradeDTO zhifubaoTradeDTO) {
         long userId = zhifubaoTradeDTO.getUserId();
         long amount = zhifubaoTradeDTO.getAmount();
