@@ -19,12 +19,15 @@
     <module>../spring-cloud-gateway-demo</module>
     <module>../atomikos-demo</module>
     <module>../web-demo</module>
+    <module>../spring-cloud-alibaba-demo</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+    <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+    <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
 
     <druid-spring-boot-starter.version>1.1.16</druid-spring-boot-starter.version>
     <dubbo-spring-boot-starter.version>0.2.0</dubbo-spring-boot-starter.version>
@@ -46,6 +49,7 @@
     <unirest-java.version>1.4.9</unirest-java.version>
     <urlbuilder.version>2.0.9</urlbuilder.version>
     <lombok.verstion>1.16.18</lombok.verstion>
+    <dubbo.version>2.7.3</dubbo.version>
 
     <java.version>1.8</java.version>
 

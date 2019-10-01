@@ -1,0 +1,14 @@
+### 获取用户，不走网关
+GET http://localhost:8081/users/1
+
+### 获取订单，不走网关
+GET http://localhost:8082/orders/1
+
+### 获取用户，走网关
+GET http://localhost:10000/users/1
+
+### 获取订单，走网关
+GET http://localhost:10000/orders/1
+
+###
+

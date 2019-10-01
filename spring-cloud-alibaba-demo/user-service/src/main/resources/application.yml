@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+dubbo:
+  scan:
+    base-packages: com.sunflower.goku.alibaba.user.rpc
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
