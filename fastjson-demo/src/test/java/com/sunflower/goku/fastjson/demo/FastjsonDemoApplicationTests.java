@@ -15,5 +15,4 @@ public class FastjsonDemoApplicationTests {
     @Before
     public void contextLoads() {
     }
-
 }
