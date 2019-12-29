@@ -1,0 +1,19 @@
+[
+  {
+    "apiName": "orders",
+    "predicateItems": [
+      {
+        "pattern": "/orders/**",
+        "matchStrategy": 1
+      }
+    ]
+  },
+  {
+    "apiName": "another_customized_api",
+    "predicateItems": [
+      {
+        "pattern": "/ahas"
+      }
+    ]
+  }
+]
