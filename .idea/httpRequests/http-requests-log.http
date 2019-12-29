@@ -1,3 +1,141 @@
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 2, "amount": 10}
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 2, "amount": 10}
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 2, "amount": 10}
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 2, "amount": 10}
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+<> 2019-12-29T024258.500.json
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+<> 2019-12-29T023055.500.json
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+<> 2019-12-29T022945.500.json
+
+###
+
+POST http://localhost:8081/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+<> 2019-12-29T022936.404.json
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+<> 2019-12-29T022841.500.json
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+<> 2019-12-29T022728.500.json
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 2, "amount": 10}
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+###
+
+POST http://localhost:8082/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+###
+
+POST http://localhost:8081/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+<> 2019-12-29T021008.404.json
+
+###
+
+GET http://localhost:8081/api/trade
+Content-Type: application/json
+
+{"userId": 1, "amount": 10}
+
+<> 2019-12-29T020959.404.json
+
+###
+
+GET http://localhost:8082/api/wallet/1
+
+<> 2019-12-29T020755.200.json
+
+###
+
+GET http://{{ip}}:{{port}}/api/wallet/1
+
+###
+
 GET http://localhost:10000/users/1
 
 <> 2019-10-01T070343.200.json

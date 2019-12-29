@@ -5,7 +5,6 @@ import com.sunflower.goku.common.api.jms.TradeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +24,9 @@ public class TradeProducer {
     public void tradeOut(TradeMessage tradeMessage) {
         logger.info("tradeMessage:{}", tradeMessage);
         jmsTemplate.convertAndSend(Queue.ZHIFUBAO_YUEBAO_TRADE, tradeMessage);
+        if (tradeMessage.getUserId() == 1L) {
+            throw new RuntimeException("投递消息失败，看能否出发回滚");
+        }
         logger.info("send mq end");
     }
 }

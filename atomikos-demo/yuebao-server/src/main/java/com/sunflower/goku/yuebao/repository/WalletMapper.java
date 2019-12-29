@@ -10,26 +10,28 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface WalletMapper {
 
-
     /**
      * 获取用户的钱包信息
+     *
      * @param userId 用户Id
-     * @return
+     * @return 钱包
      */
     Wallet getByUserId(@Param("userId") long userId);
 
     /**
      * 查询用户的钱包信息
+     *
      * @param userId 用户id
-     * @return
+     * @return 钱包
      */
     Wallet getByUserId4Update(@Param("userId") long userId);
 
     /**
-     * 更新用户余额
+     * 流入
+     *
      * @param userId 用户
-     * @param balance 余额
-     * @return
+     * @param amount 交易金额
+     * @return 钱包
      */
-    int updateBalance(@Param("userId") long userId, @Param("balance") long balance);
+    int tradeIn(@Param("userId") long userId, @Param("amount") long amount);
 }
