@@ -19,6 +19,9 @@ spring:
 
 publickey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJMVwW59Xozo7XkEJIelIPjHUjwYwxYc6ZJVuTJki1FbS1CJtWdOkoxhdr6fZYupj2OpTQ02cNtHg0qM6ugioQECAwEAAQ==
 
+logging:
+  config: classpath:spring-logback.xml
+
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mybatis/*.xml

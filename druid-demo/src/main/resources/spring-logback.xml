@@ -3,7 +3,7 @@
 
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
-    <property name="LOG_HOME" value="/opt/logs/goku/goku-leaf/"/>
+    <property name="LOG_HOME" value="/opt/logs/goku/goku-druid/"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -12,9 +12,9 @@
     </appender>
 
     <appender name="ALL_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/goku_leaf.log</file>
+        <file>${LOG_HOME}/goku_druid.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <FileNamePattern>/opt/logs/letou/letou-leaf/letou-leaf.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <FileNamePattern>${LOG_HOME}/goku-druid.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
             <maxFileSize>1GB</maxFileSize>
         </rollingPolicy>
         <encoder>
@@ -23,9 +23,9 @@
     </appender>
 
     <appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/goku_leaf_error.log</file>
+        <file>${LOG_HOME}/goku_druid_error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/better-buy-error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/goku_druid_error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxFileSize>1GB</maxFileSize>
         </rollingPolicy>
         <encoder>
@@ -38,8 +38,8 @@
         </filter>
     </appender>
 
-    <logger name="com.sunflower.goku.leaf" level="INFO"/>
-    <logger name="com.alibaba.dubbo" level="ERROR"/>
+    <logger name="com.sunflower.goku.druid.demo" level="INFO"/>
+    <logger name="com.sunflower.goku.druid.demo.repository" level="DEBUG"/>
 
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
