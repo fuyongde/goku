@@ -41,7 +41,7 @@
     <commons-io.version>2.6</commons-io.version>
     <poi-ooxml.version>3.17</poi-ooxml.version>
     <dozer.version>5.5.1</dozer.version>
-    <guava.version>27.0-jre</guava.version>
+    <guava.version>29.0-jre</guava.version>
     <junit.version>4.12</junit.version>
     <pinyin4j.version>2.5.1</pinyin4j.version>
     <slf4j-log4j12.version>1.7.5</slf4j-log4j12.version>
